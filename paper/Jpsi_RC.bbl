@@ -1,0 +1,54 @@
+\begin{thebibliography}{6}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Heller et~al.(2018)Heller, Tomalak, and
+  Vanderhaeghen}]{Heller:2018ypa}
+\bibinfo{author}{M.~Heller}, \bibinfo{author}{O.~Tomalak},
+  \bibinfo{author}{M.~Vanderhaeghen},
+\newblock \bibinfo{title}{{Soft-photon corrections to the Bethe-Heitler process
+  in the $\gamma p\rightarrow l^+l^-p$ reaction}},
+\newblock \bibinfo{journal}{Phys. Rev. D} \bibinfo{volume}{97}
+  (\bibinfo{year}{2018}) \bibinfo{pages}{076012}.
+  \DOIprefix\doi{10.1103/PhysRevD.97.076012}.
+  \href{http://arxiv.org/abs/1802.07174}{{\tt arXiv:1802.07174}}.
+%Type = Article
+\bibitem[{Chavin and Sullivan(1976)}]{Chavin1976}
+\bibinfo{author}{S.~Chavin}, \bibinfo{author}{J.~D. Sullivan},
+\newblock \bibinfo{title}{Generalized vector-dominance model of dilepton
+  production},
+\newblock \bibinfo{journal}{Phys. Rev. D} \bibinfo{volume}{13}
+  (\bibinfo{year}{1976}) \bibinfo{pages}{2990}.
+%Type = Misc
+\bibitem[{Balitsky(2024)}]{Balitsky2024}
+\bibinfo{author}{I.~Balitsky}, \bibinfo{howpublished}{Private communication},
+  \bibinfo{year}{2024}.
+%Type = Article
+\bibitem[{Ehlotzky and Mitter(1968)}]{Ehlotzky1968}
+\bibinfo{author}{F.~Ehlotzky}, \bibinfo{author}{H.~Mitter},
+\newblock \bibinfo{title}{Radiative corrections to the leptonic-decay modes of
+  the neutral vector mesons $\rho$, $\omega$, $\phi$},
+\newblock \bibinfo{journal}{Nouvo Cimento} \bibinfo{volume}{LV A}
+  (\bibinfo{year}{1968}) \bibinfo{pages}{181--192}.
+%Type = Article
+\bibitem[{Kessler(1960)}]{Kessler1960}
+\bibinfo{author}{P.~Kessler},
+\newblock \bibinfo{journal}{Nuovo Cimento} \bibinfo{volume}{17}
+  (\bibinfo{year}{1960}) \bibinfo{pages}{809}.
+%Type = Article
+\bibitem[{Longhi(1965)}]{Longhi1965}
+\bibinfo{author}{G.~Longhi},
+\newblock \bibinfo{journal}{Nuovo Cimento} \bibinfo{volume}{35}
+  (\bibinfo{year}{1965}) \bibinfo{pages}{1125}.
+
+\end{thebibliography}
