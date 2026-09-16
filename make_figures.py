@@ -39,7 +39,6 @@ def fig_dNdk0(mv=MJ, kmin=0.001, kmax=1.0, N=1000):
     plt.ylabel(r'$\frac{1}{\Gamma_0}\frac{d\Gamma}{dE_\gamma}$', fontsize=30)
     plt.legend(fontsize=FS)
     plt.grid(True, linestyle='--', linewidth=0.5, color='gray')
-    plt.suptitle(r'$\frac{1}{\Gamma_0}\frac{d\Gamma}{dE_\gamma}$', fontsize=22)
     save('dNdk0_e_mu')
 
 
@@ -54,7 +53,6 @@ def fig_soft_RC(mv=MJ, eps=0.001, kmax=1.0, N=1000):
     plt.yticks(fontsize=20)
     plt.legend(fontsize=FS)
     plt.grid(True, linestyle='--', linewidth=0.5, color='gray')
-    plt.suptitle('Soft Photon Radiation Corrections', fontsize=22)
     save('soft_RC')
 
 
@@ -69,7 +67,6 @@ def fig_hard_RC(mv=MJ, eps=0.001, kmax=1.0, N=1000):
     plt.yticks(fontsize=20)
     plt.legend(fontsize=FS)
     plt.grid(True, linestyle='--', linewidth=0.5, color='gray')
-    plt.suptitle('Hard Photon Radiation Corrections', fontsize=22)
     save('hard_RC')
 
 
@@ -84,7 +81,6 @@ def fig_HR_RC(mv=MJ, eps=0.001, kmax=1.0, N=1000):
     plt.yticks(fontsize=20)
     plt.legend(fontsize=FS)
     plt.grid(True, linestyle='--', linewidth=0.5, color='gray')
-    plt.suptitle('Radiation Corrections', fontsize=22)
     save('HR_RC')
 
 
@@ -132,7 +128,6 @@ def fig_dNdk0_HR(x0=0.001, eps=0.001, kmax=0.1):
     plt.ylabel(r'$dN/dE_\gamma$', fontsize=30)
     plt.legend(fontsize=FS)
     plt.grid(True, linestyle='--', linewidth=0.5, color='gray')
-    plt.suptitle(r'Electrons: $dN/dE_{\gamma}  ~~  \epsilon=$' + str(eps) + ' kmax=' + str(kmax), fontsize=22)
     save('dNdk0_HR' + '_' + 'kmax_' + str(kmax))
 
 
