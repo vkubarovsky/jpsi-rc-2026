@@ -88,7 +88,7 @@ def fig_HR_RC(mv=MJ, eps=0.001, kmax=1.0, N=1000):
     save('HR_RC')
 
 
-def fig_RC_Mv_VM(eps=0.01, kmax=0.1, N=1000):
+def fig_RC_Mv_VM(eps=0.001, kmax=0.1, N=1000):
     fig, ax = plt.subplots(1, 1, figsize=(12, 10))
     Mv = np.linspace(0.5, 3.1, N)
     dH = rc.hard_photon_correction(eps, kmax, Mv, ME)
@@ -102,7 +102,6 @@ def fig_RC_Mv_VM(eps=0.01, kmax=0.1, N=1000):
     plt.yticks(fontsize=20)
     plt.legend(fontsize=FS)
     plt.grid(True, linestyle='--', linewidth=0.5, color='gray')
-    plt.suptitle(r'$Vector~Mesons~RC~~\epsilon=$' + str(eps) + ' kmax=' + str(kmax), fontsize=22)
     save('RC_Mv_VM')
 
 
@@ -157,7 +156,7 @@ if __name__ == '__main__':
     fig_soft_RC(mv=MJ, eps=0.001, kmax=1.0, N=1000)
     fig_hard_RC(mv=MJ, eps=0.001, kmax=1.0, N=1000)
     fig_HR_RC(mv=MJ, eps=0.001, kmax=1.0, N=1000)
-    fig_RC_Mv_VM(eps=0.01, kmax=0.1, N=1000)
+    fig_RC_Mv_VM(eps=0.001, kmax=0.1, N=1000)
     fig_dNdk0_HR(0.001, 0.001, 0.1)
     fig_VM_BH(N=1000)
     print('done')
