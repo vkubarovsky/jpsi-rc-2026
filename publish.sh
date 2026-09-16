@@ -6,6 +6,7 @@
 #                            so the paper and code are reachable from any machine)
 #   rc_vector_mesons.py  ->  Work/Python_Lib/RC_vector_mesons.py   (the library)
 #   paper/Jpsi_RC.tex    ->  Tex/2024_rad_corr_paper/
+#   paper/Jpsi_RC.pdf    ->  Tex/2024_rad_corr_paper/   (the built paper)
 #   paper/Figures/*.pdf  ->  Tex/2024_rad_corr_paper/Figures/
 #
 # The mirror deliberately omits .git: OneDrive syncing a git directory can
@@ -35,6 +36,7 @@ cp "$REPO/validate_rc.py"      "$LIB/validate_rc.py"
 
 echo "paper   -> $TEX"
 cp "$REPO/paper/Jpsi_RC.tex" "$TEX/"
+[ -f "$REPO/paper/Jpsi_RC.pdf" ] && cp "$REPO/paper/Jpsi_RC.pdf" "$TEX/"
 mkdir -p "$TEX/Figures"
 cp "$REPO"/paper/Figures/*.pdf "$TEX/Figures/"
 
