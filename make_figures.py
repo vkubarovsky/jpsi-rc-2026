@@ -71,11 +71,15 @@ def fig_hard_RC(mv=MJ, eps=0.001, kmax=1.0, N=1000):
 
 
 def fig_HR_RC(mv=MJ, eps=0.001, kmax=1.0, N=1000):
+    """Total correction against r_max = 2 k_max / m_V, over the full physical
+    range of each channel, r_max <= 1 - 4 m_l^2/m_V^2."""
     fig, ax = plt.subplots(1, 1, figsize=(10, 8))
-    emax = np.linspace(eps, kmax, N)
-    plt.plot(emax, rc.delta_vm(emax, mv, ME), color='blue', lw=LW, label=r'$J/\psi\to e^+e^-$')
-    plt.plot(emax, rc.delta_vm(emax, mv, MMU), color='red', lw=LW, label=r'$J/\psi\to \mu^+\mu^-$')
-    plt.xlabel(r'$kmax, GeV$', fontsize=30)
+    for m, col, lab in ((ME, 'blue', r'$J/\psi\to e^+e^-$'),
+                        (MMU, 'red', r'$J/\psi\to \mu^+\mu^-$')):
+        rtop = 1.0 - 4.0*m**2/mv**2          # beta^2, the exact endpoint
+        r = np.linspace(2*eps/mv, rtop, N)
+        plt.plot(r, rc.delta_vm(r*mv/2, mv, m), color=col, lw=LW, label=lab)
+    plt.xlabel(r'$r_{max}=2k_{max}/M_V$', fontsize=30)
     plt.ylabel(r'$\delta_{RC} $', fontsize=30)
     plt.xticks(fontsize=20)
     plt.yticks(fontsize=20)

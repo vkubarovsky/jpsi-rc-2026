@@ -378,6 +378,14 @@ L_2(x)= -\int^x_0\frac{\ln(1-t)}{t}dt
 \end{equation}
 \noindent
 
+The exact one-loop calculation of the same decay width is given in
+Ref.~\cite{Akushevich2026}, which uses a different but equivalent set of variables. The
+correspondence is: the soft--hard separator $\varepsilon$ used here is denoted $\omega$
+there; the maximum hard-photon energy $k_{max}$ is denoted $\omega_{cut}$; and
+$r_{max}=2k_{max}/M_V$ is denoted $r_{cut}=\omega_{cut}/E_1$ with $E_1=M_V/2$, so that
+$r_{cut}\equiv r_{max}$. The large logarithm used there, $L=\ln(s/m_l^2)$ with
+$s=M_V^2$, is twice the one used here, $L=2\ln(M_V/m_l)$.
+
 %%%%  R(rmax)
 \begin{equation}
 \begin{split}
@@ -405,7 +413,18 @@ L_2(x)= -\int^x_0\frac{\ln(1-t)}{t}dt
 \label{Fig:dNdk0_s_h}
 \end{center}
 \end{figure}
-The $k_{max}$ photon energy depends on the experimental cut off energy and maximum value is $k_{max}=\frac{M_V}{2}$.
+The $k_{max}$ photon energy depends on the experimental cut off energy. Its kinematic
+maximum is reached when the lepton pair is produced with the smallest possible invariant
+mass, $M_{l^+l^-}=2m_l$, which gives
+\begin{equation*}
+k_{max}^{\rm\,max}=\frac{M_V^2-4m_l^2}{2M_V}=\frac{M_V}{2}-\frac{2m_l^2}{M_V},
+\qquad\text{so that}\qquad
+r_{max}\le 1-\frac{4m_l^2}{M_V^2}\equiv\beta^2 ,
+\end{equation*}
+in agreement with Eq.~\ref{Eq:Egamma} evaluated at $M_{e^+e^-}=2m_l$. For the electron
+channel $\beta^2=1-1.1\times10^{-7}$, so $k_{max}^{\rm\,max}=M_V/2$ to any relevant
+accuracy; for muons $\beta^2=0.99535$ and the massless endpoint lies outside the
+physical region.
 Hard photon energy distributions for electrons and muons are presented in Figure \ref{Fig:dNdk0_mu}.
 
 The energy distribution  for $\varepsilon$=0.001 GeV and $k_{max}$=0.1 GeV parameter set is presented in Figure \ref{Fig:dNdk0_s_h}.
@@ -455,13 +474,18 @@ Soft, hard and total radiative corrections as a function of the vector meson mas
 \end{center}
 \end{figure}
 
-Total radiative corrections as a function of $k_{max}$ for electrons and muons are presented in Figure \ref{Fig:dNdk0_total}.
+Total radiative corrections as a function of $r_{max}=2k_{max}/M_V$ for electrons and muons
+are presented in Figure \ref{Fig:dNdk0_total}, each curve covering the full physical range
+of its channel, $r_{max}\le\beta^2$. In this variable the result may be compared directly
+with Fig.~4 of Ref.~\cite{Akushevich2026}.
 %FIG. delta 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{Figures/HR_RC.pdf}
 \vspace*{-0.0cm}
-\caption{Total radiative corrections as a function of $k_{max}$ for electrons and muons.}
+\caption{Total radiative corrections as a function of $r_{max}=2k_{max}/M_V$ for the
+$J/\psi\to e^+e^-$ and $J/\psi\to\mu^+\mu^-$ decay modes. Each curve spans the full
+physical range of its channel, $r_{max}\le\beta^2=1-4m_l^2/M_V^2$.}
 \label{Fig:dNdk0_total}
 \end{center}
 \end{figure}
