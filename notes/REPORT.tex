@@ -52,6 +52,36 @@ $(m_e/E)^{2}=1.1\times10^{-7}$ and $(m_\mu/E)^{2}=4.7\times10^{-3}$, so at
 $r_{max}=1$ it is off by $1\times10^{-7}$ for electrons and $-7\times10^{-5}$ for
 muons, against the exact Eq.~(28).
 
+\subsection*{Where it should go: Section~IV}
+
+The formula belongs in Section~IV of the NLO draft, the ultrarelativistic
+section, immediately after their Eq.~(14) --- the closed form \emph{is} the
+evaluation of that integral combined with Eqs.~(8), (12) and~(13). Three
+arguments, all from their own text:
+
+\begin{itemize}\itemsep2pt
+\item Section~IV opens by promising ``compact expressions for all contributions
+      to decay width: both for virtual and real bremstrahlung ones.'' Compact
+      expressions follow for every individual contribution --- but not for the
+      sum, which is the only physical combination.
+\item Their Eq.~(16), $\delta_{FSIC}=3\alpha/4\pi$, becomes an immediate
+      corollary: it is the $r_{max}\to1$ limit of the closed form, less
+      $\delta_{self}$. At present it arrives as a separate assertion.
+\item Their Figure~4 plots exactly this quantity for both channels. The reader is
+      shown the curve but never given the function that draws it.
+\end{itemize}
+
+Section~IV also states that the URA is ``applicable for $\ell=e$'' and that the
+mass-dependent treatment is ``crucial for \ldots the muon channel''. That matches
+the accuracy table above. So the electron expression should be presented as the
+working formula of Section~IV, and the muon expression alongside it with the
+$(m_\mu/E)^2$ error flagged and Eq.~(28) named as the fallback. Dropping the muon
+formula in unqualified would contradict a sentence they have already written two
+pages earlier.
+
+This suggestion, with the formulas written out for both channels, is Section~5 of
+\texttt{NLO\_comments.pdf}.
+
 \section{The missing term is Ehlotzky's error, not yours}
 
 Your Eqs.~(14), (15), (19), (20) are \emph{faithful transcriptions} of
