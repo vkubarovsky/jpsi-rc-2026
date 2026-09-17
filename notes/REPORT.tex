@@ -82,10 +82,11 @@ pages earlier.
 This suggestion, with the formulas written out for both channels, is Section~5 of
 \texttt{NLO\_comments.pdf}.
 
-\section{The missing term is Ehlotzky's error, not yours}
+\section{The missing term in Ehlotzky's paper}
 
-Your Eqs.~(14), (15), (19), (20) are \emph{faithful transcriptions} of
-Ehlotzky \& Mitter (E\&M) Eqs.~(24) and~(26):
+Eqs.~(14), (15), (19), (20) of the note were \emph{faithful transcriptions} of
+Ehlotzky \& Mitter (E\&M) Eqs.~(24) and~(26); they now carry the restored term
+(Section~8). The omission originates in 1968:
 \begin{center}
 VPK (11)$\leftrightarrow$E\&M (22)\quad
 VPK (13)$\leftrightarrow$E\&M (23)\quad
@@ -109,7 +110,36 @@ $r_{max}$ & E\&M $\delta$ & Eq.~(26) as published & corrected\\
 \bottomrule
 \end{tabular}
 \end{center}
-The error has stood for 57 years. Your paper is the first to correct it.
+The error has stood for 57 years, and the note is the first place it is corrected.
+
+\subsection*{Where to say this in the NLO paper}
+
+The natural home is \emph{immediately after the closed-form expressions added to
+Section~IV}, not in a separate remark and not in the conclusions. The formula
+being added \emph{is} E\&M Eq.~(26) with the term restored, so one short
+paragraph placed there does three jobs at once: it attributes the expression to
+Ref.~[10], it records what had to be corrected, and it explains why the numerical
+comparison with Table~I of [10] succeeds only in the small-$r_{cut}$ rows.
+Something like:
+
+\begin{quote}
+These expressions are Eq.~(26) of Ref.~[10] with the term
+$(\alpha/\pi)(3r_{max}/2-r_{max}^{2}/4)$ restored. The differential spectrum,
+Eq.~(23) of [10], is correct and agrees with our Eq.~(14); the term was lost in
+its analytic integration, so that Eq.~(24), Eq.~(26) and Table~I of [10] are all
+low by that amount --- $5\alpha/4\pi=0.0029$ at $r_{max}=1$, and below the quoted
+precision for $r_{max}\lesssim0.1$.
+\end{quote}
+
+The existing sentence after Table~I, which claims the comparison with [10]
+``succeeds'', should then be replaced by a pointer to this paragraph. As it
+stands it asserts an agreement that does not hold at the very line it cites
+(Section~4 of \texttt{NLO\_comments.pdf}).
+
+Putting the remark anywhere else has drawbacks. In the conclusions it would read
+as an isolated swipe at a 1968 paper. As a footnote it would be too easy to miss,
+given that everyone using the compact formula has been using the incomplete one.
+Next to the formula it is simply part of the provenance.
 
 \section{Table~I of the NLO paper: $m_V=1.5$~GeV is correct}
 
