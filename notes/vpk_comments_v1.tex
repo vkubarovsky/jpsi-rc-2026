@@ -1,0 +1,303 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.95in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{slashed}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+\title{\vspace{-2em}Comments on\\[0.3em]
+\emph{Fully accounted NLO electromagnetic radiative corrections\\
+to the width of $J/\psi$ decay}}
+\author{V. Kubarovsky}
+\date{17 September 2026}
+
+\begin{document}
+\maketitle
+\vspace{-1em}
+
+\noindent
+Equation, table and reference numbers refer to the current draft. ``The note''
+is \emph{Radiative Corrections to the $J/\psi$ photoproduction reaction};
+Ref.~[10] of the draft is Ehlotzky \& Mitter, Nuovo Cimento \textbf{55A} (1968)
+181, abbreviated E\&M below.
+
+Sections~1--4 are small textual points. Sections~5--8 are substantive.
+
+\section{Eq.~(1) and Eq.~(17): replace $E_V$ by $m_V$}
+
+Both read $1/(2E_V)$. The calculation is done in the $J/\psi$ rest frame, where
+$E_V=m_V$ identically, and the text already says so. Writing $m_V$ removes a
+symbol that never takes any other value and makes the normalisation of Eq.~(1)
+directly comparable with the standard two-body form.
+
+\section{Eq.~(6): use the factorised form, and add the ultrarelativistic limit}
+
+Eq.~(6) is correct --- algebraically identical to Eq.~(7) of the note (verified
+symbolically; the difference is exactly zero). But the factorised form is easier
+to read and to check dimensionally, since the mass enters only through
+dimensionless ratios:
+\begin{equation*}
+\Gamma_B=\frac{4\pi\alpha^{2}}{f_V^{2}}\,\frac{m_V}{3}
+\left(1+\frac{2m_\ell^{2}}{m_V^{2}}\right)\sqrt{1-\frac{4m_\ell^{2}}{m_V^{2}}}\,.
+\end{equation*}
+Please also add the ultrarelativistic limit, Eq.~(8) of the note, which is the
+form actually used to fix $f_V$ from the measured leptonic width:
+\begin{equation*}
+\Gamma_B=\frac{4\pi\alpha^{2}}{f_V^{2}}\,\frac{m_V}{3}\,.
+\end{equation*}
+Worth stating explicitly: the correction connecting the two is \emph{second} order
+in the mass ratio. With $x=m_\ell^{2}/m_V^{2}$,
+\begin{equation*}
+(1+2x)\sqrt{1-4x}=1-6x^{2}+O(x^{3}),
+\end{equation*}
+so the linear term cancels. This is why the massless limit is so accurate:
+$4\times10^{-15}$ for $J/\psi\to e^+e^-$, $8\times10^{-6}$ for
+$J/\psi\to\mu^+\mu^-$. It reaches $2\times10^{-3}$ only for $\rho\to\mu^+\mu^-$.
+
+\section{Eq.~(4): the polarization sum}
+
+As printed,
+$\sum_{\rm pol}\varepsilon_\alpha(p_V)\varepsilon_\beta(p_V)=-g_{\alpha\beta}$
+is the polarization sum for a \emph{massless} vector. For a massive vector meson
+it is $-g_{\alpha\beta}+p_\alpha p_\beta/m_V^{2}$. The extra term does drop here,
+because it contracts the lepton current with $p_V=p_1+p_2$ and
+$\bar u(p_1)(\slashed p_1+\slashed p_2)v(p_2)=0$ by the Dirac equations --- so
+Eq.~(5) and everything after it are correct. But the identity as written is not
+true on its own, and the surrounding text calls it ``the photon'' while the sum
+is over the three $J/\psi$ polarizations. A clause such as ``the
+$p_\alpha p_\beta$ term is dropped by current conservation'' would fix it.
+
+\section{Reference [9]}
+
+\texttt{[9] P. Chatagnon, e-Print: 2602.22128 [hep-ex] (2026)} is now published.
+Please replace with
+\texttt{[9] P. Chatagnon, Phys. Rev. C \textbf{113} (2026) 6, 065203}.
+
+\section{Please add the closed-form total correction, for both channels}
+
+The paper gives $\delta_{self}$~(8), $\delta_{vert}$~(12), $\delta_{soft}$~(13),
+and $\delta_{hard}$ only as an unevaluated integral~(14), then the exact
+result~(28). There is no compact closed form for the total correction --- the
+quantity an experiment applies, and what a reader comes to this paper looking
+for. These are Eqs.~(19) and~(20) of the note, i.e.\ Eq.~(26) of Ref.~[10] with
+the missing term restored.
+
+\medskip
+\textbf{Electrons}, $J/\psi\to e^+e^-$:
+\begin{equation*}
+\boxed{\;
+\delta(m_V,k_{max})=-\frac{4\alpha}{\pi}
+\left[
+\left(\frac12-\ln\frac{m_V}{m_e}\right)\left(\ln r_{max}+\frac13\right)
++\frac12\left(L_2(r_{max})-\frac{\pi^{2}}{6}\right)
++\frac{17}{72}+R(r_{max})
++\frac{r_{max}^{2}}{16}-\frac{3}{8}r_{max}
+\right]\;}
+\end{equation*}
+
+\textbf{Muons}, $J/\psi\to\mu^+\mu^-$:
+\begin{equation*}
+\boxed{\;
+\begin{aligned}
+\delta(m_V,k_{max})=-\frac{4\alpha}{\pi}
+\Bigg[&
+\left(\frac12-\ln\frac{m_V}{m_\mu}\right)\left(\ln r_{max}+\frac13\right)
++\frac12\left(L_2(r_{max})-\frac{\pi^{2}}{6}\right)
++\frac{17}{72}\\[2pt]
+&+\left(\frac{5}{18}-\frac13\ln\frac{m_V}{m_e}\right)
++R(r_{max})
++\frac{r_{max}^{2}}{16}-\frac{3}{8}r_{max}
+\Bigg]
+\end{aligned}
+\;}
+\end{equation*}
+with, in each case,
+\begin{align*}
+r_{max}&=\frac{2k_{max}}{m_V}, &
+R(r_{max})&=\left(r_{max}-\frac{r_{max}^{2}}{4}-\frac34\right)
+\left[\ln\!\left(\frac{m_V}{m_\ell}\sqrt{1-r_{max}}\right)-\frac12\right], &
+L_2(x)&=-\int_0^x\frac{\ln(1-t)}{t}dt,
+\end{align*}
+$m_\ell$ being the lepton of the channel concerned. The extra term in the muon
+expression, $\frac{5}{18}-\frac13\ln\frac{m_V}{m_e}$, is the electron-loop vacuum
+polarization; it is exactly $-\frac{\pi}{4\alpha}$ times $\delta_{self}$ of
+Eq.~(8) evaluated with $m_e$, and it correctly keeps $m_e$, not $m_\mu$. Here
+$r_{max}$ is E\&M's variable, $k_{max}/E$ with $E=m_V/2$; it is identical to the
+$r_{cut}=\omega_{cut}/E_1$ already defined in this paper. The last two terms of
+each bracket are the ones absent from [10].
+
+\subsection*{Where it belongs}
+
+Section~IV, immediately after Eq.~(14) --- the closed form \emph{is} the
+evaluation of that integral combined with Eqs.~(8), (12) and~(13).
+\begin{itemize}\itemsep2pt
+\item Section~IV opens by promising ``compact expressions for all contributions
+      to decay width: both for virtual and real bremstrahlung ones.'' Compact
+      expressions follow for every individual contribution, but not for the sum,
+      which is the only physical combination.
+\item Eq.~(16), $\delta_{FSIC}=3\alpha/4\pi$, then becomes an immediate corollary:
+      it is the $r_{max}\to1$ limit of the closed form, less $\delta_{self}$.
+\item Figure~4 plots exactly this quantity. At present the reader is shown the
+      curve without being given the function.
+\end{itemize}
+Section~IV also states that the URA is ``applicable for $\ell=e$'' and that the
+mass-dependent treatment is ``crucial for \ldots the muon channel''. We would
+therefore present the electron expression as the working formula of Section~IV,
+and the muon one alongside with the $(m_\mu/E)^{2}$ error flagged and Eq.~(28)
+named as the fallback.
+
+\subsection*{Status of the approximation}
+
+These expressions are \emph{not} exact in the lepton mass, and not the
+$m_\ell=0$ limit either: the mass is kept in the logarithms, while terms
+suppressed by $(m_\ell/E)^{2}$, $E=m_V/2$, are dropped. Ref.~[10] states this
+just above its Eq.~(22) (``\ldots neglecting terms of order $(m/E)^{2}$'').
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+ & $(m_\ell/E)^{2}$ & $\delta_{self}$: Eq.~(8)$-$Eq.~(9) & total at $r_{max}=1$: this form $-$ Eq.~(28)\\
+\midrule
+$e^+e^-$     & $1.1\times10^{-7}$ & $+3\times10^{-10}$  & $+1\times10^{-7}$\\
+$\mu^+\mu^-$ & $4.7\times10^{-3}$ & $+1.1\times10^{-5}$ & $-7\times10^{-5}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+So for electrons the closed form is exact at any precision an experiment will
+reach; for muons it is good to $\sim10^{-4}$ absolute. Presenting it alongside
+Eq.~(28) lets a reader use the simple expression where it suffices and the exact
+one where it does not.
+
+Checks these expressions pass: they reproduce Table~I of the draft to all six
+digits at every $r_{cut}$, in both channels, and are independent of $\omega$ by
+construction; at $r_{max}=1$ they give exactly $\delta_{self}+3\alpha/4\pi$; and
+for $J/\psi\to e^+e^-$ at $r_{max}=1$ the value is $0.026135$, matching the
+Bardin--Shumeiko result of Table~III.
+
+\section{The missing term originates in Ref.~[10]}
+
+E\&M Eq.~(23), the differential spectrum, is correct and agrees with Eq.~(14) of
+the draft. The term was lost when that spectrum was integrated analytically in
+1968, so Eqs.~(24) and~(26) of [10] are both incomplete. The note transcribed
+those equations faithfully and inherited the omission; it has since been
+corrected.
+
+\textbf{Where to record this:} in Section~IV, immediately after the closed-form
+expressions of Section~5 above --- right where the new formulas will appear,
+following Eq.~(14). A single paragraph there attributes the formula, records the
+correction, and explains the numerical comparison with [10] all at once:
+
+\begin{quote}
+The expressions above are Eq.~(26) of Ref.~[10] with the term
+$(\alpha/\pi)(3r_{max}/2-r_{max}^{2}/4)$ restored. The differential spectrum,
+Eq.~(23) of [10], is correct and agrees with our Eq.~(14); the term was lost in
+its analytic integration, so that Eq.~(24), Eq.~(26) and Table~I of [10] are all
+low by that amount --- $5\alpha/4\pi=0.0029$ at $r_{max}=1$, and below the
+precision quoted in [10] for $r_{max}\lesssim0.1$.
+\end{quote}
+
+\section{Table~I of Ref.~[10] was computed with the incomplete formula}
+
+This matters for the validation in Section~IV, because Table~I of [10] is not a
+correct benchmark: it was computed from E\&M's own Eq.~(26) and carries the same
+omission. The evidence is not one line but the whole table --- the $\delta$
+column at $r_{max}=1.00$, all fourteen mass rows, both channels, 28 entries:
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+agreement with the $\delta$ printed in Table~I of [10] & electrons & muons\\
+\midrule
+E\&M Eq.~(26) \emph{as published} (term absent) & 12/14 rows exact & 12/14 rows exact\\
+E\&M Eq.~(26) \emph{corrected}                  & 0/14             & 0/14\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The two misses in each channel are last-digit rounding, not disagreement; the
+corrected formula misses every row by $\simeq0.003$. The agreement reported in
+the draft at $\omega/m_e=0.01$ therefore holds only in the small-$r_{cut}$ rows,
+where the missing term falls below the three decimals quoted in [10].
+
+Table~I of the draft is itself correct --- it follows from Eqs.~(8), (12), (13),
+(14), which are all sound. It is only the benchmark that is at fault. Two ways to
+handle this, not exclusive:
+
+\textbf{(1) State it}, using the paragraph of Section~6 above. The sentence
+claiming the comparison ``succeeds'' should become a pointer to it, since as
+written it asserts agreement with a table that is in error.
+
+\textbf{(2) Recompute Table~I at $m_V=M(J/\psi)$.} Since [10] can no longer serve
+as the validation target, a table at the physical mass is more useful: it
+demonstrates the $\omega$-independence just as well, and the numbers are ones a
+$J/\psi$ experiment can use. For $m_V=3.0969$~GeV, in the format of the draft:
+
+\begin{center}
+\begin{tabular}{cc rrr c rrr}
+\toprule
+& & \multicolumn{3}{c}{$e^-e^+$} & & \multicolumn{3}{c}{$\mu^-\mu^+$}\\
+\cmidrule(lr){3-5}\cmidrule(lr){7-9}
+$r_{cut}$ & $\lg(\omega/m_\ell)$ & $\delta_R$ & $\delta_H$ & $\delta$ & &
+$\delta_R$ & $\delta_H$ & $\delta$\\
+\midrule
+      & $-6$ & $-1.577194$ & $1.481750$ & $-0.095444$ & & $-0.382419$ & $0.376596$ & $-0.005823$\\
+0.10  & $-4$ & $-1.225925$ & $1.130481$ & $-0.095444$ & & $-0.259274$ & $0.253452$ & $-0.005823$\\
+      & $-2$ & $-0.874655$ & $0.779212$ & $-0.095443$ & & $-0.136130$ & $0.130328$ & $-0.005801$\\
+\midrule
+      & $-6$ & $-1.577194$ & $1.540558$ & $-0.036636$ & & $-0.382419$ & $0.396794$ & $+0.014375$\\
+0.25  & $-4$ & $-1.225925$ & $1.189288$ & $-0.036636$ & & $-0.259274$ & $0.273649$ & $+0.014375$\\
+      & $-2$ & $-0.874655$ & $0.838019$ & $-0.036636$ & & $-0.136130$ & $0.150526$ & $+0.014396$\\
+\midrule
+      & $-6$ & $-1.577194$ & $1.576919$ & $-0.000275$ & & $-0.382419$ & $0.408881$ & $+0.026462$\\
+0.50  & $-4$ & $-1.225925$ & $1.225649$ & $-0.000275$ & & $-0.259274$ & $0.285736$ & $+0.026462$\\
+      & $-2$ & $-0.874655$ & $0.874380$ & $-0.000275$ & & $-0.136130$ & $0.162613$ & $+0.026483$\\
+\midrule
+      & $-6$ & $-1.577194$ & $1.603329$ & $+0.026135$ & & $-0.382419$ & $0.416436$ & $+0.034017$\\
+1.00  & $-4$ & $-1.225925$ & $1.252060$ & $+0.026135$ & & $-0.259274$ & $0.293291$ & $+0.034017$\\
+      & $-2$ & $-0.874655$ & $0.900791$ & $+0.026136$ & & $-0.136130$ & $0.170168$ & $+0.034038$\\
+\bottomrule
+\end{tabular}
+\end{center}
+$\delta_R$ for the muon channel includes both self-energy loops. The
+$r_{cut}=1.00$ electron entry, $0.026135$, equals $\delta_{self}+3\alpha/4\pi$
+and matches Table~III.
+
+\section{The upper limit of $r_{cut}$ is not 1}
+
+The text before Eq.~(16) says the cut energy takes its maximum ``at (15) or
+$r_{cut}=r_{max}=1$'', and Table~III is captioned $(r_{max}=1)$. That is
+inconsistent with Eq.~(15). With $r_{cut}=2\omega_{cut}/m_V$ and
+$\omega_{max}=m_V/2-2m_\ell^{2}/m_V$,
+\begin{equation*}
+r_{cut}^{\;\max}=\frac{2\omega_{max}}{m_V}=1-\frac{4m_\ell^{2}}{m_V^{2}}=\beta^{2},
+\end{equation*}
+which is $0.99535$ for muons, not 1. ($1-1.1\times10^{-7}$ for electrons.)
+
+This is not only notational. Eq.~(29) defines
+$\rho_1(\omega_{cut})=\sqrt{m_V(m_V-2\omega_{cut})}+\sqrt{m_V(m_V-2\omega_{cut})-4m_\ell^{2}}$.
+Setting $\omega_{cut}=m_V/2$, i.e.\ literally $r_{cut}=1$, makes the second
+radicand $-4m_\ell^{2}<0$ and $\rho_1$ imaginary. At the true endpoint the
+radicand vanishes exactly and $\rho_1(\omega_{max})=2m_\ell$, the correct finite
+limit; Eq.~(28) is well defined up to $\omega_{max}$ and no further.
+
+We take it that Table~III was evaluated at $\omega_{cut}=\omega_{max}$ and only
+the label is wrong. We suggest replacing ``$r_{cut}=r_{max}=1$'' and the
+Table~III caption by ``$\omega_{cut}=\omega_{max}$'' or ``$r_{cut}=\beta^{2}$''.
+The axis of Fig.~4 is already correctly drawn as $\omega_{cut}/\omega_{max}$.
+
+\section{Status of the note}
+
+The note has been corrected: the missing term in its Eqs.~(14), (15), (19), (20);
+the leading logarithm of its Eq.~(20), which had $m_e$ where $m_\mu$ belongs; the
+phase-space factor of its Eq.~(6); and the maximum photon energy, which now
+carries the exact endpoint and the bound $r_{max}\le\beta^{2}$. Its Fig.~8 has
+been redrawn against $r_{max}$ over the full physical range, so it now coincides
+with Fig.~4 of this draft --- the two abscissae are related by
+$r_{max}=(\omega_{cut}/\omega_{max})\beta^{2}$, and the curves agree to machine
+precision in both channels. A paragraph giving the correspondence between the
+variables of the two papers ($\varepsilon\leftrightarrow\omega$,
+$k_{max}\leftrightarrow\omega_{cut}$, $r_{max}\leftrightarrow r_{cut}$,
+$\ln(m_V/m_\ell)=L/2$) has been added.
+
+\end{document}
