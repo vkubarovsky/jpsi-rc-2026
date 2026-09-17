@@ -151,7 +151,12 @@ R(r_{max})&=\left(r_{max}-\frac{r_{max}^{2}}{4}-\frac34\right)
 \left[\ln\!\left(\frac{m_V}{m_\ell}\sqrt{1-r_{max}}\right)-\frac12\right], &
 L_2(x)&=-\int_0^x\frac{\ln(1-t)}{t}dt,
 \end{align*}
-$m_\ell$ being the mass of the lepton in the channel concerned. The extra term
+$m_\ell$ being the mass of the lepton in the channel concerned. Here $r_{max}$
+is Ehlotzky's variable, defined below his Eq.~(25) as ``the maximum fraction of
+the lepton energy $E$ \ldots which is lost \ldots by the emission of a hard
+photon'', i.e.\ $r_{max}=k_{max}/E$ with $E=m_V/2$. It is identical to the
+$r_{cut}=\omega_{cut}/E_1$ already defined in this paper, so no new variable is
+needed --- but see Section~6. The extra term
 in the muon expression, $\frac{5}{18}-\frac13\ln\frac{m_V}{m_e}$, is the
 electron-loop vacuum polarization; it is exactly $-\frac{\pi}{4\alpha}$ times
 $\delta_{self}$ of Eq.~(8) evaluated with $m_e$, and it correctly keeps $m_e$,
@@ -222,6 +227,31 @@ Checks the expressions pass:
 \item for $J/\psi\to e^+e^-$ at $r_{max}=1$ the value is $0.026135$, matching the
       Bardin--Shumeiko result of Table~III.
 \end{itemize}
+
+\section{The upper limit of $r_{cut}$ is not 1}
+
+The text before Eq.~(16) says the cut energy takes its maximum value ``at (15) or
+$r_{cut}=r_{max}=1$'', and Table~III is captioned $(r_{max}=1)$. That is
+inconsistent with Eq.~(15) itself. With $r_{cut}=\omega_{cut}/E_1=2\omega_{cut}/m_V$
+and $\omega_{max}=m_V/2-2m_\ell^{2}/m_V$,
+\begin{equation*}
+r_{cut}^{\;\max}=\frac{2\omega_{max}}{m_V}=1-\frac{4m_\ell^{2}}{m_V^{2}}=\beta^{2},
+\end{equation*}
+which is $0.99535$ for muons, not 1. (For electrons it is $1-1.1\times10^{-7}$.)
+
+This is not only notational. Eq.~(29) defines
+$\rho_1(\omega_{cut})=\sqrt{m_V(m_V-2\omega_{cut})}+\sqrt{m_V(m_V-2\omega_{cut})-4m_\ell^{2}}$.
+Setting $\omega_{cut}=m_V/2$, i.e.\ literally $r_{cut}=1$, makes the second
+radicand $-4m_\ell^{2}<0$ and $\rho_1$ imaginary. At the true endpoint
+$\omega_{cut}=\omega_{max}$ that radicand vanishes exactly and
+$\rho_1(\omega_{max})=2m_\ell$, which is the correct and finite limit. So Eq.~(28)
+is well defined up to $\omega_{max}$ and no further.
+
+We take it that Table~III was in fact evaluated at $\omega_{cut}=\omega_{max}$,
+which is the sensible thing to do; only the label is wrong. We suggest replacing
+``$r_{cut}=r_{max}=1$'' and the Table~III caption by ``$\omega_{cut}=\omega_{max}$''
+or ``$r_{cut}=\beta^{2}$''. The same remark applies to the upper end of the axis
+in Fig.~4, which is correctly drawn as $\omega_{cut}/\omega_{max}$.
 
 \section{Reference [9]}
 
