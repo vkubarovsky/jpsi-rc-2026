@@ -3,28 +3,32 @@
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{graphicx}
-\usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
 \usepackage{parskip}
 \setlength{\parindent}{0pt}
-\newcommand{\ok}{\textcolor{black!60}{agree}}
 
-\title{\vspace{-2em}$J/\psi$ radiative corrections --- status report}
-\author{}
-\date{16--17 September 2026}
+\title{\vspace{-2em}$J/\psi$ radiative corrections:\\
+comparison of the two calculations}
+\author{V. Kubarovsky}
+\date{17 September 2026}
 
 \begin{document}
 \maketitle
-\vspace{-3em}
+\vspace{-2.5em}
 
-\section{The final formula is missing from the NLO paper}
+\noindent
+``NLO paper'' is \emph{Fully accounted NLO electromagnetic radiative corrections
+to the width of $J/\psi$ decay}; ``the note'' is \emph{Radiative Corrections to
+the $J/\psi$ photoproduction reaction}; Ref.~[10] of the NLO paper is Ehlotzky
+\& Mitter, Nuovo Cimento \textbf{55A} (1968) 181, abbreviated E\&M.
+
+\section{The closed-form total correction is missing from the NLO paper}
 
 The NLO paper gives $\delta_{self}$~(8), $\delta_{vert}$~(12),
 $\delta_{soft}$~(13), $\delta_{hard}$ only as an unevaluated integral~(14), and
-the exact Bardin--Shumeiko result~(28). \textbf{There is no compact closed form
-for the total ultrarelativistic correction} --- the quantity an experiment
-actually applies. The right one is Eq.~(24)/(26) of Ehlotzky \& Mitter with the
-missing term restored:
+the exact Bardin--Shumeiko result~(28). There is no compact closed form for the
+total ultrarelativistic correction --- the quantity an experiment applies. It is
+E\&M Eq.~(26) with the missing term restored:
 \begin{equation*}
 \boxed{\;
 \delta(m_V,\omega_{cut})=-\frac{4\alpha}{\pi}
@@ -40,221 +44,170 @@ r&=\frac{2\omega_{cut}}{m_V}, &
 R(r)&=\left(r-\frac{r^{2}}{4}-\frac34\right)\left[\ln\!\left(\frac{m_V}{m_\ell}\sqrt{1-r}\right)-\frac12\right], &
 L_2(x)&=-\int_0^x\frac{\ln(1-t)}{t}dt
 \end{align*}
-For muons add the electron-loop vacuum polarization $=\delta_{self}$ of Eq.~(8)
-with $m_e$. Equivalently the missing piece is $+(\alpha/\pi)(3r/2-r^{2}/4)$ added
-to $\delta$; it vanishes as $r\to0$ and reaches $5\alpha/4\pi=0.0029$ at $r=1$.
+For muons add the electron-loop vacuum polarization, $=\delta_{self}$ of Eq.~(8)
+with $m_e$. The missing piece is equivalently $+(\alpha/\pi)(3r/2-r^{2}/4)$; it
+vanishes as $r\to0$ and reaches $5\alpha/4\pi=0.0029$ at $r=1$.
 
-\textbf{Status of this formula.} It is \emph{not} exact in the lepton mass, and
-not the $m_\ell=0$ limit either: the mass is kept in the logarithms, while terms
-of relative order $(m_\ell/E)^{2}$, $E=m_V/2$, are dropped. Ehlotzky \& Mitter say
-so above their Eq.~(22) (``neglecting terms of order $(m/E)^{2}$''). Numerically
-$(m_e/E)^{2}=1.1\times10^{-7}$ and $(m_\mu/E)^{2}=4.7\times10^{-3}$, so at
-$r_{max}=1$ it is off by $1\times10^{-7}$ for electrons and $-7\times10^{-5}$ for
-muons, against the exact Eq.~(28).
+\textbf{Status of this formula.} It is not exact in the lepton mass, and not the
+$m_\ell=0$ limit either: the mass is kept in the logarithms while terms of
+relative order $(m_\ell/E)^{2}$, $E=m_V/2$, are dropped. E\&M state this above
+their Eq.~(22). Since $(m_e/E)^{2}=1.1\times10^{-7}$ and
+$(m_\mu/E)^{2}=4.7\times10^{-3}$, at $r=1$ it is off by $1\times10^{-7}$ for
+electrons and $-7\times10^{-5}$ for muons against the exact Eq.~(28).
 
-\subsection*{Where it should go: Section~IV}
+\textbf{Where it should go: Section~IV}, immediately after Eq.~(14) --- the closed
+form \emph{is} the evaluation of that integral combined with Eqs.~(8), (12)
+and~(13). Section~IV opens by promising ``compact expressions for all
+contributions to decay width''; compact expressions follow for every individual
+contribution but not for the sum, which is the only physical combination. Eq.~(16),
+$\delta_{FSIC}=3\alpha/4\pi$, then becomes a corollary --- the $r\to1$ limit less
+$\delta_{self}$ --- and Figure~4 acquires the function it plots. Since Section~IV
+also states that the URA is ``applicable for $\ell=e$'', the electron expression
+should be the working formula, with the muon one alongside, its
+$(m_\mu/E)^{2}$ error flagged and Eq.~(28) named as the fallback.
 
-The formula belongs in Section~IV of the NLO draft, the ultrarelativistic
-section, immediately after their Eq.~(14) --- the closed form \emph{is} the
-evaluation of that integral combined with Eqs.~(8), (12) and~(13). Three
-arguments, all from their own text:
+\section{The missing term originates in Ref.~[10]}
 
-\begin{itemize}\itemsep2pt
-\item Section~IV opens by promising ``compact expressions for all contributions
-      to decay width: both for virtual and real bremstrahlung ones.'' Compact
-      expressions follow for every individual contribution --- but not for the
-      sum, which is the only physical combination.
-\item Their Eq.~(16), $\delta_{FSIC}=3\alpha/4\pi$, becomes an immediate
-      corollary: it is the $r_{max}\to1$ limit of the closed form, less
-      $\delta_{self}$. At present it arrives as a separate assertion.
-\item Their Figure~4 plots exactly this quantity for both channels. The reader is
-      shown the curve but never given the function that draws it.
-\end{itemize}
+E\&M Eq.~(23), the differential spectrum, is correct and agrees with Eq.~(14) of
+the NLO paper. The term was lost when that spectrum was integrated analytically
+in 1968, so Eq.~(24) and Eq.~(26) of [10] are both incomplete. The note
+transcribed those equations faithfully and inherited the omission; it has now
+been corrected (Section~6).
 
-Section~IV also states that the URA is ``applicable for $\ell=e$'' and that the
-mass-dependent treatment is ``crucial for \ldots the muon channel''. That matches
-the accuracy table above. So the electron expression should be presented as the
-working formula of Section~IV, and the muon expression alongside it with the
-$(m_\mu/E)^2$ error flagged and Eq.~(28) named as the fallback. Dropping the muon
-formula in unqualified would contradict a sentence they have already written two
-pages earlier.
-
-This suggestion, with the formulas written out for both channels, is Section~5 of
-\texttt{NLO\_comments.pdf}.
-
-\section{The missing term in Ehlotzky's paper}
-
-Eqs.~(14), (15), (19), (20) of the note were \emph{faithful transcriptions} of
-Ehlotzky \& Mitter (E\&M) Eqs.~(24) and~(26); they now carry the restored term
-(Section~8). The omission originates in 1968:
-\begin{center}
-VPK (11)$\leftrightarrow$E\&M (22)\quad
-VPK (13)$\leftrightarrow$E\&M (23)\quad
-VPK (14)$\leftrightarrow$E\&M (24)\quad
-VPK (18)$\leftrightarrow$E\&M (25)\quad
-VPK (19)$\leftrightarrow$E\&M (26)
-\end{center}
-E\&M Eq.~(23), the differential spectrum, is correct. The term was lost when that
-spectrum was integrated analytically in 1968. Their Eq.~(26) and their Table~I
-inherit it. Recomputing their Table~I from their own Eq.~(26) reproduces
-\textbf{every printed digit}, electrons and muons:
-\begin{center}
-\begin{tabular}{cccc}
-\toprule
-$r_{max}$ & E\&M $\delta$ & Eq.~(26) as published & corrected\\
-\midrule
-0.10 & $-0.087$ & $-0.087$ & $-0.087$\\
-0.25 & $-0.034$ & $-0.034$ & $-0.033$\\
-0.50 & $-0.002$ & $-0.002$ & $+0.000$\\
-1.00 & $+0.021$ & $+0.021$ & $+0.024$\\
-\bottomrule
-\end{tabular}
-\end{center}
-The error has stood for 57 years, and the note is the first place it is corrected.
-
-\subsection*{Where to say this in the NLO paper}
-
-The natural home is \emph{immediately after the closed-form expressions added to
-Section~IV}, not in a separate remark and not in the conclusions. The formula
-being added \emph{is} E\&M Eq.~(26) with the term restored, so one short
-paragraph placed there does three jobs at once: it attributes the expression to
-Ref.~[10], it records what had to be corrected, and it explains why the numerical
-comparison with Table~I of [10] succeeds only in the small-$r_{cut}$ rows.
-Something like:
+\textbf{Where to record this:} in Section~IV, immediately after the closed-form
+expressions proposed above. Those expressions \emph{are} E\&M Eq.~(26) with the
+term restored, so one paragraph placed there attributes the formula, records the
+correction, and explains the numerical comparison with [10] all at once.
+Suggested wording:
 
 \begin{quote}
-These expressions are Eq.~(26) of Ref.~[10] with the term
+The expressions above are Eq.~(26) of Ref.~[10] with the term
 $(\alpha/\pi)(3r_{max}/2-r_{max}^{2}/4)$ restored. The differential spectrum,
 Eq.~(23) of [10], is correct and agrees with our Eq.~(14); the term was lost in
 its analytic integration, so that Eq.~(24), Eq.~(26) and Table~I of [10] are all
-low by that amount --- $5\alpha/4\pi=0.0029$ at $r_{max}=1$, and below the quoted
-precision for $r_{max}\lesssim0.1$.
+low by that amount --- $5\alpha/4\pi=0.0029$ at $r_{max}=1$, and below the
+precision quoted in [10] for $r_{max}\lesssim0.1$.
 \end{quote}
 
-The existing sentence after Table~I, which claims the comparison with [10]
-``succeeds'', should then be replaced by a pointer to this paragraph. As it
-stands it asserts an agreement that does not hold at the very line it cites
-(Section~4 of \texttt{NLO\_comments.pdf}).
+\section{Table~I of Ref.~[10] was computed with the incomplete formula}
 
-Putting the remark anywhere else has drawbacks. In the conclusions it would read
-as an isolated swipe at a 1968 paper. As a footnote it would be too easy to miss,
-given that everyone using the compact formula has been using the incomplete one.
-Next to the formula it is simply part of the provenance.
+This matters for the validation in Section~IV, because Table~I of [10] is not a
+correct benchmark. It was computed from E\&M's own Eq.~(26), and therefore
+carries the same omission.
 
-\section{Table~I of the NLO paper: $m_V=1.5$~GeV is correct}
+The evidence is not one line but the whole table. Taking the $\delta$ column at
+$r_{max}=1.00$, all fourteen mass rows, both channels --- 28 entries:
 
-You suspected it was wrong; it is not. E\&M's table column is $2E$~(MeV), and
-$2E=m_V$ because $E=m_V/2$ at resonance (stated below their Eq.~22). The rows are
-marked $\rho$ at 765.0, $\omega$ at 782.0, $\phi$ at 1019.5 --- meson masses. So
-the last row, 1500.0, is $m_V=1.5$~GeV, exactly what the NLO paper used.
-$\delta_R$ settles it, depending on the mass only through $\ln(2E/m)$:
 \begin{center}
-\begin{tabular}{lc}
+\begin{tabular}{lcc}
 \toprule
-reading & $\delta_R$\\
+agreement with the $\delta$ printed in Table~I of [10] & electrons & muons\\
 \midrule
-$m_V=1.5$~GeV (NLO's choice) & $-0.746525$ \quad$\leftarrow$ E\&M print $-0.747$\\
-$m_V=3.0$~GeV (if 1500 were $E$) & $-0.868832$\\
-$m_V=M(J/\psi)$ & $-0.874655$\\
+E\&M Eq.~(26) \emph{as published} (term absent) & 12/14 rows exact & 12/14 rows exact\\
+E\&M Eq.~(26) \emph{corrected}                  & 0/14             & 0/14\\
 \bottomrule
 \end{tabular}
 \end{center}
-What \emph{is} wrong is their claim of agreement with that table: at $r_{max}=1$
-they have $0.023891$ against E\&M's $0.021$. They agree only in the small-$r_{max}$
-rows.
 
-\section{NLO Fig.~4 vs VPK Fig.~8}
+The two misses in each channel are last-digit rounding, not disagreement; the
+corrected formula misses every row by $\simeq0.003$. So Table~I of [10] is low by
+$(\alpha/\pi)(3r_{max}/2-r_{max}^{2}/4)$ throughout. The agreement reported in
+the NLO draft at $\omega/m_e=0.01$ holds only in the small-$r_{cut}$ rows, where
+the missing term falls below the three decimals quoted in [10].
 
-Same quantity, different axes.
+Two ways to handle this:
+
+\textbf{(1) State it in the NLO paper.} The paragraph suggested in Section~2
+above already covers Table~I of [10]. The sentence claiming the comparison
+``succeeds'' should then become a pointer to it, since as written it asserts
+agreement with a table that is itself in error.
+
+\textbf{(2) Recompute Table~I at $m_V=M(J/\psi)$.} Since [10] can no longer serve
+as the validation target, a table at the physical mass is more useful: it
+demonstrates the $\omega$-independence just as well, and the numbers are ones a
+$J/\psi$ experiment can use directly. For $m_V=3.0969$~GeV:
+
 \begin{center}
-\includegraphics[width=0.78\textwidth]{compare_fig4_fig8.pdf}
-\end{center}
-
-\textbf{(a) The endpoints differ.} NLO uses
-$\omega_{max}=m_V/2-2m_\ell^{2}/m_V$ (their Eq.~15); you use $k_{max}=M_V/2$.
-Identical for electrons, but for muons $1.54125$ vs $1.54846$~GeV, i.e.\
-$r_{max}^{\,\rm max}=0.99535$, not 1 --- a $0.47\%$ shift.
-
-\textbf{(b) Your Fig.~8 covers only the first two thirds}, stopping at
-$k_{max}=1.0$~GeV $=0.646\,\omega_{max}$. Their Fig.~4 runs to 1.
-
-\begin{center}
-\begin{tabular}{ccccc}
+\begin{tabular}{cc rrr c rrr}
 \toprule
-$\omega_{cut}/\omega_{max}$ & $k_{max}(e)$ & $\delta(e)$ & $k_{max}(\mu)$ & $\delta(\mu)$\\
+& & \multicolumn{3}{c}{$e^-e^+$} & & \multicolumn{3}{c}{$\mu^-\mu^+$}\\
+\cmidrule(lr){3-5}\cmidrule(lr){7-9}
+$r_{cut}$ & $\lg(\omega/m_\ell)$ & $\delta_R$ & $\delta_H$ & $\delta$ & &
+$\delta_R$ & $\delta_H$ & $\delta$\\
 \midrule
-0.10 & 0.1548 & $-0.095444$ & 0.1541 & $-0.005934$\\
-0.25 & 0.3871 & $-0.036636$ & 0.3853 & $+0.014282$\\
-0.50 & 0.7742 & $-0.000275$ & 0.7706 & $+0.026393$\\
-1.00 & 1.5485 & $+0.026135$ & 1.5412 & $+0.034023$\\
+      & $-6$ & $-1.577194$ & $1.481750$ & $-0.095444$ & & $-0.382419$ & $0.376596$ & $-0.005823$\\
+0.10  & $-4$ & $-1.225925$ & $1.130481$ & $-0.095444$ & & $-0.259274$ & $0.253452$ & $-0.005823$\\
+      & $-2$ & $-0.874655$ & $0.779212$ & $-0.095443$ & & $-0.136130$ & $0.130328$ & $-0.005801$\\
+\midrule
+      & $-6$ & $-1.577194$ & $1.540558$ & $-0.036636$ & & $-0.382419$ & $0.396794$ & $+0.014375$\\
+0.25  & $-4$ & $-1.225925$ & $1.189288$ & $-0.036636$ & & $-0.259274$ & $0.273649$ & $+0.014375$\\
+      & $-2$ & $-0.874655$ & $0.838019$ & $-0.036636$ & & $-0.136130$ & $0.150526$ & $+0.014396$\\
+\midrule
+      & $-6$ & $-1.577194$ & $1.576919$ & $-0.000275$ & & $-0.382419$ & $0.408881$ & $+0.026462$\\
+0.50  & $-4$ & $-1.225925$ & $1.225649$ & $-0.000275$ & & $-0.259274$ & $0.285736$ & $+0.026462$\\
+      & $-2$ & $-0.874655$ & $0.874380$ & $-0.000275$ & & $-0.136130$ & $0.162613$ & $+0.026483$\\
+\midrule
+      & $-6$ & $-1.577194$ & $1.603329$ & $+0.026135$ & & $-0.382419$ & $0.416436$ & $+0.034017$\\
+1.00  & $-4$ & $-1.225925$ & $1.252060$ & $+0.026135$ & & $-0.259274$ & $0.293291$ & $+0.034017$\\
+      & $-2$ & $-0.874655$ & $0.900791$ & $+0.026136$ & & $-0.136130$ & $0.170168$ & $+0.034038$\\
 \bottomrule
 \end{tabular}
 \end{center}
-At the endpoint against their exact Bardin--Shumeiko numbers:
-$e^+e^-$ yours $0.026135$ vs exact $0.026135$ (diff $10^{-7}$);
-$\mu^+\mu^-$ yours $0.034017$ vs exact $0.034097$ (diff $-8\times10^{-5}$, the
-expected URA limit).
+$\delta_R$ for the muon channel includes both self-energy loops. The
+$r_{cut}=1.00$ electron entry, $0.026135$, equals
+$\delta_{self}+3\alpha/4\pi$ and matches the Bardin--Shumeiko value of Table~III.
+The two approaches are not exclusive; (1) is needed in any case.
 
-\section{New finding: your $k_{max}=M_V/2$ contradicts your own Eq.~(22)}
+\section{Figure 4 of the NLO paper and Figure 8 of the note}
 
-The text above your Eq.~(16) says the maximum photon energy is $k_{max}=M_V/2$.
-That is the massless limit. The exact endpoint is
-\begin{equation*}
-\omega_{max}=\frac{M_V^{2}-4m_\ell^{2}}{2M_V}=\frac{M_V}{2}-\frac{2m_\ell^{2}}{M_V},
-\end{equation*}
-which is NLO Eq.~(15) --- \textbf{and it is already in your paper}, as Eq.~(22),
-$E_\gamma=(M_{J/\psi}^{2}-M_{ee}^{2})/(2M_{J/\psi})$ evaluated at
-$M_{ee}\to2m_\ell$. So Eqs.~(16) and~(22) of your own paper disagree.
-No consequence for electrons. For muons $r_{max}$ can only reach $0.99535$, so
-the $r_{max}=1$ row of a muon table lies outside phase space.
-\textbf{Not fixed --- your call.}
+These are now the same picture. Figure~8 of the note has been redrawn against
+$r_{max}=2k_{max}/M_V$ over the full physical range of each channel, so it
+carries the same content as Figure~4, which uses $\omega_{cut}/\omega_{max}$.
+The two abscissae are related by $r_{max}=(\omega_{cut}/\omega_{max})\beta^{2}$
+with $\beta^{2}=1-4m_\ell^{2}/M_V^{2}$, and the curves agree to machine precision
+at every point sampled, in both channels.
 
-\section{Formula-by-formula status}
+\section{Formula comparison: the points that carried a finding}
+
 \begin{center}
-\begin{tabular}{llp{9.2cm}}
+\begin{tabular}{llp{8.6cm}}
 \toprule
-VPK & NLO & verdict\\
+note & NLO & \\
 \midrule
-(1)--(5)   & (3)--(5)       & agree; conventions differ (fixed $\lambda$ vs polarization-averaged)\\
-(6)        & (1)+(2)        & agree exactly. \textbf{Fixed today:} $4m_\ell^2/m_V\to4m_\ell^2/m_V^2$\\
-(7)        & (6)            & identical (sympy: difference $0$)\\
-(8)        & ---            & ultrarelativistic limit; NLO has none\\
+(7)        & (6)            & identical (verified symbolically)\\
 (11),(12)  & (8)+(12)+(13)  & identical to machine precision\\
 (13)       & (14) integrand & identical\\
-(14),(15)  & ---            & were missing the term. \textbf{Fixed today}\\
-(16)       & (15)           & \textbf{disagree} --- see Section~5\\
-(19),(20)  & ---            & were missing the term. \textbf{Fixed today}; Eq.~(20) $m_e\to m_\mu$ also fixed\\
-(21),(22)  & ---            & no counterpart; (22) is equivalent to NLO~(15)\\
----        & (16)           & FSIC $3\alpha/4\pi$; your corrected Eq.~(19) reproduces it\\
----        & (28)           & exact Bardin--Shumeiko; no counterpart in your paper\\
+(14),(15),(19),(20) & ---   & were missing the term; corrected in the note\\
+(20)       & ---            & leading logarithm had $m_e$ where $m_\mu$ belongs; corrected\\
+(6)        & (1)+(2)        & $4m_\ell^2/m_V$ was not dimensionless; corrected\\
+(16)       & (15)           & both take $k_{max}^{\max}=M_V/2$ in the text; the exact endpoint is
+                              $M_V/2-2m_\ell^2/M_V$. Corrected in the note; see below\\
+---        & (4)            & polarization sum written as for a massless vector\\
+---        & (16)           & FSIC $3\alpha/4\pi$; reproduced by the corrected closed form\\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\section{Changed today}
-Paper (\texttt{Jpsi\_RC.tex}, compiled and published):
-Eqs.~(14),(15),(19),(20) missing term added;
-Eq.~(20) leading log $m_e\to m_\mu$;
-Eq.~(6) $4m_\ell^2/m_V\to4m_\ell^2/m_V^2$;
-Fig.~7 recomputed at $\varepsilon=0.001$ (was 0.01, caption said 0.001);
-Figs.~3--8 in-plot titles removed, information moved to captions;
-Figs.~3,4,6 captions now name the two decay modes.
+On the last-but-two line: the NLO paper says the cut takes its maximum ``at (15)
+or $r_{cut}=r_{max}=1$'', and Table~III is captioned $(r_{max}=1)$, but Eq.~(15)
+itself gives $r_{cut}^{\max}=1-4m_\ell^{2}/m_V^{2}=\beta^{2}$, which is $0.99535$
+for muons. Taken literally, $\omega_{cut}=m_V/2$ makes the second radicand of
+$\rho_1$ in Eq.~(29) negative and $\rho_1$ imaginary, in both channels. The
+labels should read $\omega_{cut}=\omega_{max}$, or $r_{cut}=\beta^{2}$.
 
-Code: three duplicate copies collapsed into one library
-\texttt{rc\_vector\_mesons.py}; \texttt{validate\_rc.py} checks it against an
-independent quadrature reference and two analytic anchors --- all pass.
-Repo \texttt{\char`~/jpsi-rc-2026}, \url{https://github.com/vkubarovsky/jpsi-rc-2026},
-mirrored to OneDrive \texttt{Work/2026\_Jpsi\_radiative\_corrections}.
+\section{Status of the note}
 
-\section{Waiting on you}
-\begin{itemize}\itemsep2pt
-\item \texttt{notes/NLO\_comments.pdf} --- the note for your co-authors: all six
-of your items plus the Eq.~(4) polarization-sum point. \emph{Not sent anywhere.}
-\item Section~5: Eq.~(16) vs Eq.~(22) inconsistency --- not fixed.
-\item ``Formala'' $\times2$ in the Fig.~9 legend --- you said leave Fig.~9 alone.
-\item \texttt{fig\_igor} defined twice in \texttt{Jpsi\_rad\_corr.py}.
-\item Never verified: your Eqs.~(2)--(5) in detail, (17), (18); and the
-Bethe--Heitler formulas behind the $-20\%$ claim in Section~VII.
-\end{itemize}
+Corrected: the missing term in Eqs.~(14), (15), (19), (20); the leading
+logarithm of Eq.~(20); the phase-space factor of Eq.~(6); the maximum photon
+energy, which now carries the exact endpoint and the bound
+$r_{max}\le\beta^{2}$ in Eq.~(16); Fig.~7, recomputed at the $\varepsilon$ stated
+in its caption; Fig.~8, redrawn against $r_{max}$ over the full range. A short
+paragraph giving the correspondence between the variables of the two papers
+($\varepsilon\leftrightarrow\omega$, $k_{max}\leftrightarrow\omega_{cut}$,
+$r_{max}\leftrightarrow r_{cut}$, $\ln(M_V/m_\ell)=L/2$) has been added after
+Eq.~(17). Equation numbering is unchanged throughout.
+
+Not yet examined: Eqs.~(2)--(5), (17), (18) of the note, and the Bethe--Heitler
+formulas behind the $-20\%$ comparison of its Section~VII.
 
 \end{document}
