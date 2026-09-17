@@ -1,0 +1,192 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.95in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+\newcommand{\ok}{\textcolor{black!60}{agree}}
+
+\title{\vspace{-2em}$J/\psi$ radiative corrections --- status report}
+\author{}
+\date{16--17 September 2026}
+
+\begin{document}
+\maketitle
+\vspace{-3em}
+
+\section{The final formula is missing from the NLO paper}
+
+The NLO paper gives $\delta_{self}$~(8), $\delta_{vert}$~(12),
+$\delta_{soft}$~(13), $\delta_{hard}$ only as an unevaluated integral~(14), and
+the exact Bardin--Shumeiko result~(28). \textbf{There is no compact closed form
+for the total ultrarelativistic correction} --- the quantity an experiment
+actually applies. The right one is Eq.~(24)/(26) of Ehlotzky \& Mitter with the
+missing term restored:
+\begin{equation*}
+\boxed{\;
+\delta(m_V,\omega_{cut})=-\frac{4\alpha}{\pi}
+\left[
+\left(\frac12-\ln\frac{m_V}{m_\ell}\right)\left(\ln r+\frac13\right)
++\frac12\left(L_2(r)-\frac{\pi^{2}}{6}\right)
++\frac{17}{72}+R(r)
++\underbrace{\frac{r^{2}}{16}-\frac{3}{8}r}_{\text{missing from [10]}}
+\right]\;}
+\end{equation*}
+\begin{align*}
+r&=\frac{2\omega_{cut}}{m_V}, &
+R(r)&=\left(r-\frac{r^{2}}{4}-\frac34\right)\left[\ln\!\left(\frac{m_V}{m_\ell}\sqrt{1-r}\right)-\frac12\right], &
+L_2(x)&=-\int_0^x\frac{\ln(1-t)}{t}dt
+\end{align*}
+For muons add the electron-loop vacuum polarization $=\delta_{self}$ of Eq.~(8)
+with $m_e$. Equivalently the missing piece is $+(\alpha/\pi)(3r/2-r^{2}/4)$ added
+to $\delta$; it vanishes as $r\to0$ and reaches $5\alpha/4\pi=0.0029$ at $r=1$.
+
+\section{The missing term is Ehlotzky's error, not yours}
+
+Your Eqs.~(14), (15), (19), (20) are \emph{faithful transcriptions} of
+Ehlotzky \& Mitter (E\&M) Eqs.~(24) and~(26):
+\begin{center}
+VPK (11)$\leftrightarrow$E\&M (22)\quad
+VPK (13)$\leftrightarrow$E\&M (23)\quad
+VPK (14)$\leftrightarrow$E\&M (24)\quad
+VPK (18)$\leftrightarrow$E\&M (25)\quad
+VPK (19)$\leftrightarrow$E\&M (26)
+\end{center}
+E\&M Eq.~(23), the differential spectrum, is correct. The term was lost when that
+spectrum was integrated analytically in 1968. Their Eq.~(26) and their Table~I
+inherit it. Recomputing their Table~I from their own Eq.~(26) reproduces
+\textbf{every printed digit}, electrons and muons:
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+$r_{max}$ & E\&M $\delta$ & Eq.~(26) as published & corrected\\
+\midrule
+0.10 & $-0.087$ & $-0.087$ & $-0.087$\\
+0.25 & $-0.034$ & $-0.034$ & $-0.033$\\
+0.50 & $-0.002$ & $-0.002$ & $+0.000$\\
+1.00 & $+0.021$ & $+0.021$ & $+0.024$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The error has stood for 57 years. Your paper is the first to correct it.
+
+\section{Table~I of the NLO paper: $m_V=1.5$~GeV is correct}
+
+You suspected it was wrong; it is not. E\&M's table column is $2E$~(MeV), and
+$2E=m_V$ because $E=m_V/2$ at resonance (stated below their Eq.~22). The rows are
+marked $\rho$ at 765.0, $\omega$ at 782.0, $\phi$ at 1019.5 --- meson masses. So
+the last row, 1500.0, is $m_V=1.5$~GeV, exactly what the NLO paper used.
+$\delta_R$ settles it, depending on the mass only through $\ln(2E/m)$:
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+reading & $\delta_R$\\
+\midrule
+$m_V=1.5$~GeV (NLO's choice) & $-0.746525$ \quad$\leftarrow$ E\&M print $-0.747$\\
+$m_V=3.0$~GeV (if 1500 were $E$) & $-0.868832$\\
+$m_V=M(J/\psi)$ & $-0.874655$\\
+\bottomrule
+\end{tabular}
+\end{center}
+What \emph{is} wrong is their claim of agreement with that table: at $r_{max}=1$
+they have $0.023891$ against E\&M's $0.021$. They agree only in the small-$r_{max}$
+rows.
+
+\section{NLO Fig.~4 vs VPK Fig.~8}
+
+Same quantity, different axes.
+\begin{center}
+\includegraphics[width=0.78\textwidth]{compare_fig4_fig8.pdf}
+\end{center}
+
+\textbf{(a) The endpoints differ.} NLO uses
+$\omega_{max}=m_V/2-2m_\ell^{2}/m_V$ (their Eq.~15); you use $k_{max}=M_V/2$.
+Identical for electrons, but for muons $1.54125$ vs $1.54846$~GeV, i.e.\
+$r_{max}^{\,\rm max}=0.99535$, not 1 --- a $0.47\%$ shift.
+
+\textbf{(b) Your Fig.~8 covers only the first two thirds}, stopping at
+$k_{max}=1.0$~GeV $=0.646\,\omega_{max}$. Their Fig.~4 runs to 1.
+
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+$\omega_{cut}/\omega_{max}$ & $k_{max}(e)$ & $\delta(e)$ & $k_{max}(\mu)$ & $\delta(\mu)$\\
+\midrule
+0.10 & 0.1548 & $-0.095444$ & 0.1541 & $-0.005934$\\
+0.25 & 0.3871 & $-0.036636$ & 0.3853 & $+0.014282$\\
+0.50 & 0.7742 & $-0.000275$ & 0.7706 & $+0.026393$\\
+1.00 & 1.5485 & $+0.026135$ & 1.5412 & $+0.034023$\\
+\bottomrule
+\end{tabular}
+\end{center}
+At the endpoint against their exact Bardin--Shumeiko numbers:
+$e^+e^-$ yours $0.026135$ vs exact $0.026135$ (diff $10^{-7}$);
+$\mu^+\mu^-$ yours $0.034017$ vs exact $0.034097$ (diff $-8\times10^{-5}$, the
+expected URA limit).
+
+\section{New finding: your $k_{max}=M_V/2$ contradicts your own Eq.~(22)}
+
+The text above your Eq.~(16) says the maximum photon energy is $k_{max}=M_V/2$.
+That is the massless limit. The exact endpoint is
+\begin{equation*}
+\omega_{max}=\frac{M_V^{2}-4m_\ell^{2}}{2M_V}=\frac{M_V}{2}-\frac{2m_\ell^{2}}{M_V},
+\end{equation*}
+which is NLO Eq.~(15) --- \textbf{and it is already in your paper}, as Eq.~(22),
+$E_\gamma=(M_{J/\psi}^{2}-M_{ee}^{2})/(2M_{J/\psi})$ evaluated at
+$M_{ee}\to2m_\ell$. So Eqs.~(16) and~(22) of your own paper disagree.
+No consequence for electrons. For muons $r_{max}$ can only reach $0.99535$, so
+the $r_{max}=1$ row of a muon table lies outside phase space.
+\textbf{Not fixed --- your call.}
+
+\section{Formula-by-formula status}
+\begin{center}
+\begin{tabular}{llp{9.2cm}}
+\toprule
+VPK & NLO & verdict\\
+\midrule
+(1)--(5)   & (3)--(5)       & agree; conventions differ (fixed $\lambda$ vs polarization-averaged)\\
+(6)        & (1)+(2)        & agree exactly. \textbf{Fixed today:} $4m_\ell^2/m_V\to4m_\ell^2/m_V^2$\\
+(7)        & (6)            & identical (sympy: difference $0$)\\
+(8)        & ---            & ultrarelativistic limit; NLO has none\\
+(11),(12)  & (8)+(12)+(13)  & identical to machine precision\\
+(13)       & (14) integrand & identical\\
+(14),(15)  & ---            & were missing the term. \textbf{Fixed today}\\
+(16)       & (15)           & \textbf{disagree} --- see Section~5\\
+(19),(20)  & ---            & were missing the term. \textbf{Fixed today}; Eq.~(20) $m_e\to m_\mu$ also fixed\\
+(21),(22)  & ---            & no counterpart; (22) is equivalent to NLO~(15)\\
+---        & (16)           & FSIC $3\alpha/4\pi$; your corrected Eq.~(19) reproduces it\\
+---        & (28)           & exact Bardin--Shumeiko; no counterpart in your paper\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Changed today}
+Paper (\texttt{Jpsi\_RC.tex}, compiled and published):
+Eqs.~(14),(15),(19),(20) missing term added;
+Eq.~(20) leading log $m_e\to m_\mu$;
+Eq.~(6) $4m_\ell^2/m_V\to4m_\ell^2/m_V^2$;
+Fig.~7 recomputed at $\varepsilon=0.001$ (was 0.01, caption said 0.001);
+Figs.~3--8 in-plot titles removed, information moved to captions;
+Figs.~3,4,6 captions now name the two decay modes.
+
+Code: three duplicate copies collapsed into one library
+\texttt{rc\_vector\_mesons.py}; \texttt{validate\_rc.py} checks it against an
+independent quadrature reference and two analytic anchors --- all pass.
+Repo \texttt{\char`~/jpsi-rc-2026}, \url{https://github.com/vkubarovsky/jpsi-rc-2026},
+mirrored to OneDrive \texttt{Work/2026\_Jpsi\_radiative\_corrections}.
+
+\section{Waiting on you}
+\begin{itemize}\itemsep2pt
+\item \texttt{notes/NLO\_comments.pdf} --- the note for your co-authors: all six
+of your items plus the Eq.~(4) polarization-sum point. \emph{Not sent anywhere.}
+\item Section~5: Eq.~(16) vs Eq.~(22) inconsistency --- not fixed.
+\item ``Formala'' $\times2$ in the Fig.~9 legend --- you said leave Fig.~9 alone.
+\item \texttt{fig\_igor} defined twice in \texttt{Jpsi\_rad\_corr.py}.
+\item Never verified: your Eqs.~(2)--(5) in detail, (17), (18); and the
+Bethe--Heitler formulas behind the $-20\%$ claim in Section~VII.
+\end{itemize}
+
+\end{document}

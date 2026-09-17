@@ -1,0 +1,179 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{slashed}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+\title{\vspace{-2em}Comments on\\[0.3em]
+\emph{Fully accounted NLO electromagnetic radiative corrections\\
+to the width of $J/\psi$ decay}}
+\author{V. Kubarovsky}
+\date{16 September 2026}
+
+\begin{document}
+\maketitle
+
+\noindent
+Equation and table numbers refer to the current draft (\texttt{w\_jpsi-4}).
+``VPK note'' refers to \emph{Radiative Corrections to the $J/\psi$
+photoproduction reaction}.
+
+\section{Eq.~(1) and Eq.~(17): replace $E_V$ by $m_V$}
+
+Both read $1/(2E_V)$. The whole calculation is done in the $J/\psi$ rest frame,
+where $E_V=m_V$ identically, and the text already says so. Writing $m_V$ removes
+a symbol that never takes any other value, and makes the normalisation of
+Eq.~(1) directly comparable with the standard two-body form.
+
+\section{Eq.~(6): use the factorised form, and add the ultrarelativistic limit}
+
+Eq.~(6) is correct --- it is algebraically identical to Eq.~(7) of the VPK note
+(verified symbolically; the difference is exactly zero). But the factorised form
+is easier to read and to check dimensionally, because the mass dependence enters
+only through dimensionless ratios:
+\begin{equation*}
+\Gamma_B=\frac{4\pi\alpha^{2}}{f_V^{2}}\,\frac{m_V}{3}
+\left(1+\frac{2m_\ell^{2}}{m_V^{2}}\right)
+\sqrt{1-\frac{4m_\ell^{2}}{m_V^{2}}}\,.
+\end{equation*}
+Please also add the ultrarelativistic limit, Eq.~(8) of the VPK note, which is
+the form actually used to fix $f_V$ from the measured leptonic width:
+\begin{equation*}
+\Gamma_B=\frac{4\pi\alpha^{2}}{f_V^{2}}\,\frac{m_V}{3}\,.
+\end{equation*}
+Worth stating explicitly: the correction connecting the two is \emph{second}
+order in the mass ratio, not first. With $x=m_\ell^{2}/m_V^{2}$,
+\begin{equation*}
+(1+2x)\sqrt{1-4x}=1-6x^{2}+O(x^{3}),
+\end{equation*}
+so the linear term cancels. This is why the massless limit is so accurate:
+$4\times10^{-15}$ for $J/\psi\to e^+e^-$ and $8\times10^{-6}$ for
+$J/\psi\to\mu^+\mu^-$. It reaches only $2\times10^{-3}$ for $\rho\to\mu^+\mu^-$.
+
+\section{Table~I: please say what $m_V=1.5$~GeV is}
+
+Tables~I and~II are computed at $m_V=1.5$~GeV, which is neither the $J/\psi$ nor
+any physical vector meson. A reader meeting it just after Section~II, which sets
+$m_V=3.0969$~GeV, will be confused.
+
+We understand it to be the last row of Table~I of Ref.~[10], whose tabulated
+column is $2E$~(MeV), running from 500 to 1500 with $\rho$, $\omega$ and $\phi$
+marked --- that is, $2E$ is the meson mass, since $E=m_V/2$ at resonance (stated
+in [10] below their Eq.~(22)). One sentence would settle it: ``for comparison
+with Ref.~[10] we take $m_V=1.5$~GeV, the largest mass tabulated there.''
+
+\section{The comparison with Ref.~[10] does not hold where it is claimed}
+
+The text states that Table~I can be ``successfully compared'' with Table~I of
+Ref.~[10] at $\omega/m_e=0.01$, last line of the first half. At that line the two
+disagree, and the disagreement grows with $r_{cut}$:
+
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+$r_{max}$ & Ref.~[10] & this work & difference\\
+\midrule
+0.10 & $-0.087$ & $-0.0866$    & $\sim 0$\\
+0.25 & $-0.034$ & $-0.0330$    & $0.001$\\
+0.50 & $-0.002$ & $+0.000044$  & $0.002$\\
+1.00 & $+0.021$ & $+0.023891$  & $0.0029$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The soft part agrees exactly (both give $\delta_R=-0.747$), so the mass and the
+cut-off are matched correctly. The discrepancy is entirely in the hard part and
+equals $5\alpha/4\pi=0.0029$ at $r_{max}=1$.
+
+The reason is that \textbf{Eq.~(24) of Ref.~[10] is missing a term}. Their
+differential spectrum, Eq.~(23), is correct and agrees with Eq.~(14) of this
+work; the term was lost when that spectrum was integrated analytically. Their
+Eq.~(26), and their Table~I, inherit the omission. Recomputing their table from
+their own Eq.~(26) reproduces every printed digit, electrons and muons alike,
+which confirms the diagnosis.
+
+Suggested replacement for the claim of agreement:
+
+\begin{quote}
+Our Eq.~(14) agrees with expression~(23) of [10]. The integrated form, Eq.~(24)
+of [10], is however missing a term $(\alpha/\pi)(3r_{max}/2-r_{max}^{2}/4)$, so
+that the totals tabulated in Table~I of [10] are low by that amount; at
+$r_{max}=1$ the deficit is $5\alpha/4\pi=0.0029$. Our results agree with [10] in
+the small-$r_{max}$ rows, where the missing term lies below the quoted precision.
+\end{quote}
+
+\section{Please add the closed-form total correction}
+
+The paper gives $\delta_{self}$~(8), $\delta_{vert}$~(12), $\delta_{soft}$~(13),
+and $\delta_{hard}$ only as an unevaluated integral~(14), then the exact
+result~(28). There is no compact closed form for the total ultrarelativistic
+correction, which is what an experiment actually applies. We would like it in the
+paper. The correct expression --- Eq.~(24) of Ref.~[10] with the missing term
+restored --- is
+\begin{equation*}
+\boxed{\;
+\delta(m_V,\omega_{cut})=-\frac{4\alpha}{\pi}
+\left[
+\left(\frac12-\ln\frac{m_V}{m_\ell}\right)\left(\ln r+\frac13\right)
++\frac12\left(L_2(r)-\frac{\pi^{2}}{6}\right)
++\frac{17}{72}+R(r)
++\frac{r^{2}}{16}-\frac{3}{8}r
+\right]\;}
+\end{equation*}
+with
+\begin{align*}
+r      &= \frac{2\omega_{cut}}{m_V}, &
+R(r)   &= \left(r-\frac{r^{2}}{4}-\frac34\right)
+          \left[\ln\!\left(\frac{m_V}{m_\ell}\sqrt{1-r}\right)-\frac12\right], &
+L_2(x) &= -\int_0^x\frac{\ln(1-t)}{t}\,dt .
+\end{align*}
+For the muon channel add the electron-loop vacuum polarization, which is exactly
+$\delta_{self}$ of Eq.~(8) evaluated with $m_e$.
+
+The last two terms, $r^{2}/16-\tfrac38 r$, are the ones absent from [10].
+Checks this expression passes:
+\begin{itemize}
+\item it reproduces Table~I of this work to all six digits at every $r_{cut}$,
+      in both channels, and is independent of $\omega$ by construction;
+\item at $r=1$ it gives exactly $\delta_{self}+3\alpha/4\pi$, i.e.\ $\delta_{self}$
+      plus the FSIC of Eq.~(16);
+\item for $J/\psi\to e^+e^-$ at $r=1$ it gives $0.026135$, matching the
+      Bardin--Shumeiko result of Table~III;
+\item for $J/\psi\to\mu^+\mu^-$ at $r=1$ it gives $0.034017$ against the exact
+      $0.034097$ --- the $8\times10^{-5}$ residue is the ultrarelativistic
+      approximation itself, consistent with the accuracy discussion of Section~IV.
+\end{itemize}
+
+\section{Reference [9]}
+
+\begin{center}
+\texttt{[9] P. Chatagnon, e-Print: 2602.22128 [hep-ex] (2026).}
+\end{center}
+is now published. Please replace with
+\begin{center}
+\texttt{[9] P. Chatagnon, Phys. Rev. C \textbf{113} (2026) 6, 065203.}
+\end{center}
+
+\section*{Additional point, for consideration}
+
+\textbf{Eq.~(4).} As printed,
+\begin{equation*}
+\sum_{\rm pol}\varepsilon_\alpha(p_V)\varepsilon_\beta(p_V)=-g_{\alpha\beta}
+\end{equation*}
+is the polarization sum for a \emph{massless} vector. For a massive vector meson
+it is
+\begin{equation*}
+\sum_\lambda\varepsilon_\alpha\varepsilon_\beta^{*}
+=-g_{\alpha\beta}+\frac{p_\alpha p_\beta}{m_V^{2}}\,.
+\end{equation*}
+The extra term does drop here, because it contracts the lepton current with
+$p_V=p_1+p_2$ and $\bar u(p_1)(\slashed p_1+\slashed p_2)v(p_2)=0$ by the Dirac
+equations --- so Eq.~(5) and everything after it are correct. But the identity as
+written is not true on its own, and the surrounding text calls it ``the photon''
+while the sum is over the three $J/\psi$ polarizations. A clause such as ``the
+$p_\alpha p_\beta$ term is dropped by current conservation'' would fix it.
+
+\end{document}
