@@ -105,46 +105,96 @@ $r_{max}=1$ the deficit is $5\alpha/4\pi=0.0029$. Our results agree with [10] in
 the small-$r_{max}$ rows, where the missing term lies below the quoted precision.
 \end{quote}
 
-\section{Please add the closed-form total correction}
+\section{Please add the closed-form total correction, for both channels}
 
 The paper gives $\delta_{self}$~(8), $\delta_{vert}$~(12), $\delta_{soft}$~(13),
 and $\delta_{hard}$ only as an unevaluated integral~(14), then the exact
-result~(28). There is no compact closed form for the total ultrarelativistic
-correction, which is what an experiment actually applies. We would like it in the
-paper. The correct expression --- Eq.~(24) of Ref.~[10] with the missing term
-restored --- is
+result~(28). There is no compact closed form for the total correction, which is
+what an experiment actually applies and what a reader comes to this paper
+looking for. We would like it in the paper, written out separately for the two
+channels. These are Eqs.~(19) and~(20) of the VPK note, i.e.\ Eq.~(26) of
+Ref.~[10] with the missing term restored.
+
+\medskip
+\textbf{Electrons}, $J/\psi\to e^+e^-$:
 \begin{equation*}
 \boxed{\;
-\delta(m_V,\omega_{cut})=-\frac{4\alpha}{\pi}
+\delta(m_V,k_{max})=-\frac{4\alpha}{\pi}
 \left[
-\left(\frac12-\ln\frac{m_V}{m_\ell}\right)\left(\ln r+\frac13\right)
-+\frac12\left(L_2(r)-\frac{\pi^{2}}{6}\right)
-+\frac{17}{72}+R(r)
-+\frac{r^{2}}{16}-\frac{3}{8}r
+\left(\frac12-\ln\frac{m_V}{m_e}\right)\left(\ln r_{max}+\frac13\right)
++\frac12\left(L_2(r_{max})-\frac{\pi^{2}}{6}\right)
++\frac{17}{72}+R(r_{max})
++\frac{r_{max}^{2}}{16}-\frac{3}{8}r_{max}
 \right]\;}
 \end{equation*}
-with
-\begin{align*}
-r      &= \frac{2\omega_{cut}}{m_V}, &
-R(r)   &= \left(r-\frac{r^{2}}{4}-\frac34\right)
-          \left[\ln\!\left(\frac{m_V}{m_\ell}\sqrt{1-r}\right)-\frac12\right], &
-L_2(x) &= -\int_0^x\frac{\ln(1-t)}{t}\,dt .
-\end{align*}
-For the muon channel add the electron-loop vacuum polarization, which is exactly
-$\delta_{self}$ of Eq.~(8) evaluated with $m_e$.
 
-The last two terms, $r^{2}/16-\tfrac38 r$, are the ones absent from [10].
-Checks this expression passes:
+\textbf{Muons}, $J/\psi\to\mu^+\mu^-$:
+\begin{equation*}
+\boxed{\;
+\begin{aligned}
+\delta(m_V,k_{max})=-\frac{4\alpha}{\pi}
+\Bigg[&
+\left(\frac12-\ln\frac{m_V}{m_\mu}\right)\left(\ln r_{max}+\frac13\right)
++\frac12\left(L_2(r_{max})-\frac{\pi^{2}}{6}\right)
++\frac{17}{72}\\[2pt]
+&+\left(\frac{5}{18}-\frac13\ln\frac{m_V}{m_e}\right)
++R(r_{max})
++\frac{r_{max}^{2}}{16}-\frac{3}{8}r_{max}
+\Bigg]
+\end{aligned}
+\;}
+\end{equation*}
+with, in each case,
+\begin{align*}
+r_{max}&=\frac{2k_{max}}{m_V}, &
+R(r_{max})&=\left(r_{max}-\frac{r_{max}^{2}}{4}-\frac34\right)
+\left[\ln\!\left(\frac{m_V}{m_\ell}\sqrt{1-r_{max}}\right)-\frac12\right], &
+L_2(x)&=-\int_0^x\frac{\ln(1-t)}{t}dt,
+\end{align*}
+$m_\ell$ being the mass of the lepton in the channel concerned. The extra term
+in the muon expression, $\frac{5}{18}-\frac13\ln\frac{m_V}{m_e}$, is the
+electron-loop vacuum polarization; it is exactly $-\frac{\pi}{4\alpha}$ times
+$\delta_{self}$ of Eq.~(8) evaluated with $m_e$, and it correctly keeps $m_e$,
+not $m_\mu$.
+
+The last two terms of each bracket, $r_{max}^{2}/16-\tfrac38 r_{max}$, are the
+ones absent from Ref.~[10].
+
+\subsection*{Status of the approximation}
+
+These expressions are \emph{not} exact in the lepton mass, and they are also not
+the $m_\ell=0$ limit. They are the ultrarelativistic result: the lepton mass is
+kept in the logarithms, while terms suppressed by $(m_\ell/E)^{2}$, $E=m_V/2$,
+are dropped. Ref.~[10] states this explicitly just above its Eq.~(22)
+(``\ldots neglecting terms of order $(m/E)^{2}$''), and the same restriction
+propagates to its Eqs.~(24) and~(26). We suggest saying so when the formulas are
+introduced, since this paper's whole point is the mass-exact treatment.
+
+The size of what is dropped:
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+ & $(m_\ell/E)^{2}$ & $\delta_{self}$: Eq.~(8) $-$ Eq.~(9) & total at $r_{max}=1$: this form $-$ Eq.~(28)\\
+\midrule
+$e^+e^-$     & $1.1\times10^{-7}$ & $+3\times10^{-10}$ & $+1\times10^{-7}$\\
+$\mu^+\mu^-$ & $4.7\times10^{-3}$ & $+1.1\times10^{-5}$ & $-7\times10^{-5}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+So for the electron channel the closed form is exact at any precision an
+experiment will reach, and for the muon channel it is good to $\sim10^{-4}$
+absolute --- which is precisely the accuracy argument made in Section~IV of the
+draft. Presenting the closed form alongside Eq.~(28) would let a reader use the
+simple expression where it suffices and the exact one where it does not.
+
+Checks the expressions pass:
 \begin{itemize}
-\item it reproduces Table~I of this work to all six digits at every $r_{cut}$,
-      in both channels, and is independent of $\omega$ by construction;
-\item at $r=1$ it gives exactly $\delta_{self}+3\alpha/4\pi$, i.e.\ $\delta_{self}$
-      plus the FSIC of Eq.~(16);
-\item for $J/\psi\to e^+e^-$ at $r=1$ it gives $0.026135$, matching the
-      Bardin--Shumeiko result of Table~III;
-\item for $J/\psi\to\mu^+\mu^-$ at $r=1$ it gives $0.034017$ against the exact
-      $0.034097$ --- the $8\times10^{-5}$ residue is the ultrarelativistic
-      approximation itself, consistent with the accuracy discussion of Section~IV.
+\item they reproduce Table~I of this work to all six digits at every $r_{cut}$,
+      in both channels, and are independent of $\omega$ by construction;
+\item at $r_{max}=1$ they give exactly $\delta_{self}+3\alpha/4\pi$, i.e.\
+      $\delta_{self}$ plus the FSIC of Eq.~(16);
+\item for $J/\psi\to e^+e^-$ at $r_{max}=1$ the value is $0.026135$, matching the
+      Bardin--Shumeiko result of Table~III.
 \end{itemize}
 
 \section{Reference [9]}
