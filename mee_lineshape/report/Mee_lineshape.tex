@@ -139,6 +139,25 @@ lower panel data/fit.}
 \label{fig:truth}
 \end{figure}
 
+The same MC truth, without any resolution and with no free parameter in v2
+($N$ = number of generated decays, \texttt{br} = QED), is shown in
+Fig.~\ref{fig:nores} against $\Delta M=M-\Mee$ in log bins.  The generator's
+threshold $\varepsilon=1$~MeV is directly visible: 121\,083 decays (0.6054) sit
+exactly at $M$, against $F(1~\text{MeV})=0.6055$ (121\,102 expected); not a
+single event lies between $\Delta M=0$ and $\Delta M(k{=}\varepsilon)=1.0002$~MeV;
+above it v2 describes the tail over three decades of $\Delta M$ with
+$\chi^2$/ndf = 50/61.  The original function, even at its own best fit, is
+20\,\% low at $\Delta M=1$--3~MeV and 15\,\% high above 0.3~GeV --- the $1/k$
+first-order spectrum with $k$ replaced by $M-\Mee$.
+
+\begin{figure}[p]
+\centering\includegraphics[width=\textwidth]{figures/fig_truth_nores.pdf}
+\caption{MC truth without resolution.  Left: tail in $\Delta M=M-\Mee$ (log bins),
+v2 with no free parameter and the original function at its best fit.  Right: the
+last 10~MeV below $M$ in 0.1~MeV bins: the empty 1~MeV gap and the delta peak.}
+\label{fig:nores}
+\end{figure}
+
 \subsection{Pseudo-data: MC truth folded with a Gaussian}
 \textbf{No GEMC and no data are used in this section.}  The input is the generator's
 own $\Mee$ (the 200k events of the previous section); each event is shifted by a
@@ -249,7 +268,7 @@ Branch \texttt{mee-lineshape} of \texttt{jpsi-rc-2026}, directory \path{mee_line
 \begin{itemize}
 \item \path{dNdMee_v2.cpp} --- the function;
 \item \path{study_lineshape.py} --- all fits, through the compiled library;
-\item \path{make_figures_mee.py} and this report.
+\item \path{make_figures_mee.py}, \path{make_truth_nores.py} and this report.
 \end{itemize}
 Inputs: 200k Born generator events (exclurad\_py, card \path{born_jpsi.txt}, model
 \path{jpsi.diffrad_vm_pdet}, \texttt{iacc none}) in
