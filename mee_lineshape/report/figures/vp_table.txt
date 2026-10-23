@@ -1,0 +1,21 @@
+J/psi: M = 3.0969 GeV, s = 9.5908 GeV^2, alpha = 1/137.035999
+
+loop     m (GeV)     s/4m^2     Delta_alpha (exact)   asymptotic (ln s/m^2 - 5/3)   factor 1+2Delta_alpha
+e     0.000510999   9.182e+06     0.012197            0.012197                    1.02439
+mu       0.105658       214.8     0.003935            0.003940                    1.00787
+tau       1.77686      0.7594     -0.000781            nan                    0.99844
+had   (space-like fit at Q2 = s, estimate)   0.008680                                          1.01736
+
+leptons total Delta_alpha = 0.015351  (2x = 0.03070);  with hadrons 0.024031 (2x = 0.04806)
+electron / muon loop = 3.100;  difference e - mu = 0.008262  vs (alpha/3pi) ln(m_mu^2/m_e^2) = 0.008256
+
+3 alpha/4 pi (FSR + vertex, inclusive, KLN) = 0.001742
+delta_vm(E) (rc_vector_mesons.py)          = 0.026135
+3 alpha/4pi + 2 Delta_alpha_e              = 0.026135   -> delta_vm(E) = FSR + electron loop only
+
+Gamma / Gamma_Born:
+   FSR + vertex only             1.00174
+   + electron loop (delta_vm)    1.02663
+   + mu, tau loops               1.03322
+   + hadronic (estimate)         1.05168
+B_Born = 5.971 % / factor:  5.9606 % (FSR only)   5.6776 % (all, |1-Pi|^-2)

@@ -227,6 +227,110 @@ smeared with 30~MeV.}
 \label{fig:prod}
 \end{figure}
 
+\section{The branching ratio, $\Gamma_{\rm Born}$ and vacuum polarisation}
+\label{sec:born}
+
+\paragraph{What the PDG value is.}
+$\mathcal B(\Jpsi\to e^+e^-)=5.971\,\%$ is radiation-inclusive: it counts every
+decay to $e^+e^-$ with any number of photons.  The separate entry
+$\mathcal B(e^+e^-\gamma,\,E_\gamma>100~\text{MeV})=(8.8\pm1.4)\times10^{-3}$ is a
+subset of it, not an additional channel.  The ratio of the two,
+$0.147\pm0.023$, agrees with the QED fraction $1-F(0.1~\text{GeV})=0.1437$ of
+Eq.~(\ref{eq:F}), which predicts $0.1437\times5.971\,\%=8.58\times10^{-3}$.  The
+inclusive width is the right quantity for a table whose branching ratios must sum to
+one, it does not depend on a detector window, and it is free of the electron-mass
+logarithms of final-state radiation (KLN theorem).
+
+\paragraph{$\Gamma_{\rm Born}$ exists and can be computed.}
+The lowest-order width --- the quantity of potential models,
+$\Gamma_0\propto\alpha^2Q_c^2|\psi(0)|^2/M^2$, and of lattice decay constants,
+$\Gamma_0=4\pi\alpha^2Q_c^2f_\psi^2/3M$ --- follows from the measured one once
+\emph{all} lepton-side QED corrections, loops included, are divided out:
+\begin{equation}
+  \Gamma = \Gamma_{\rm Born}\,\Big(1+\frac{3\alpha}{4\pi}\Big)\,
+  \frac{1}{|1-\Pi(M^2)|^2},\qquad
+  \frac{1}{|1-\Pi|^2}\simeq 1+2\,\Delta\alpha(M^2),
+  \label{eq:born}
+\end{equation}
+where $3\alpha/4\pi=0.00174$ is real emission at all photon energies plus the vertex
+loop (the large logarithms cancel between them), and $\Pi$ is the vacuum polarisation
+of the photon propagator, renormalised at $q^2=0$ ($\alpha$ in $\Gamma_{\rm Born}$ is
+$\alpha(0)$).  Quark-side corrections (QCD, $1-16\alpha_s/3\pi$) belong to the theory
+that $\Gamma_{\rm Born}$ is compared with, not to Eq.~(\ref{eq:born}); the $\Jpsi$
+pole itself is, by definition, not part of $\Pi$.
+
+\paragraph{What $\delta(E)$ of \texttt{delta\_vm} contains.}
+At the full phase space the Ehlotzky--Mitter correction gives
+$\delta(E)=0.026135$.  This is \emph{exactly} (to $10^{-9}$, checked in
+\path{validate_rc.py}, section~2) the inclusive QED correction plus the
+\emph{electron} loop only:
+\[
+  \delta(E)=\frac{3\alpha}{4\pi}+2\,\Delta\alpha_e(M^2)
+  =0.001742+0.024394 .
+\]
+The term $(4\alpha/3\pi)\ln(M/m_e)$ that it carries is this loop, not an uncancelled
+final-state logarithm.  The muon, $\tau$ and hadronic loops are not in it.
+
+\paragraph{Lepton loops at $s=M^2$.}
+One loop, exact in the lepton mass, time-like
+($\Delta\alpha_\ell=\frac{2\alpha}{\pi}\int_0^1x(1-x)\ln|1-x(1-x)s/m_\ell^2|\,dx$):
+
+\begin{center}
+\begin{tabular}{lcccc}\toprule
+loop & $s/4m^2$ & $\Delta\alpha(M^2)$ & $\frac{\alpha}{3\pi}\big(\ln\frac{s}{m^2}-\frac53\big)$ & $1+2\Delta\alpha$\\\midrule
+$e$      & $9.2\times10^{6}$ & 0.012197 & 0.012197 & 1.02439\\
+$\mu$    & 214.8             & 0.003935 & 0.003940 & 1.00787\\
+$\tau$   & 0.76 (below threshold) & $-0.000781$ & --- & 0.99844\\
+hadrons  & \multicolumn{2}{c}{0.0087 (estimate)} & & 1.017\\\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Electron versus muon loop.}  Both are far above threshold, so both
+follow the asymptotic form $(\alpha/3\pi)[\ln(s/m^2)-5/3]$; for the muon the mass
+correction is only $-0.1\,\%$ of the loop.  The electron loop is 3.10 times the muon
+loop.  Their difference does not depend on $s$:
+\[
+  \Delta\alpha_e-\Delta\alpha_\mu=\frac{\alpha}{3\pi}\ln\frac{m_\mu^2}{m_e^2}
+  =0.008256\quad(\text{exact one loop: }0.008262),
+\]
+i.e.\ 1.65\,\% in the rate.  Leaving the muon loop out of $\Gamma_{\rm Born}$ is a
+0.8\,\% error, larger than the 0.5\,\% uncertainty of the PDG branching ratio.  The
+$\tau$ loop is below threshold at $M_{\Jpsi}$ and small and negative.  The hadronic
+value is the space-like parametrisation of \path{exclurad_py/core/virtual.py}
+evaluated at $Q^2=M^2$, an estimate of the non-resonant part only; a proper number
+needs a dispersive evaluation of $\Delta\alpha_{\rm had}$ at $\sqrt s=3.1$~GeV with the
+$\Jpsi$ excluded.  Fig.~\ref{fig:vp} shows the loops against $\sqrt s$.
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.8\textwidth]{figures/fig_vp_loops.pdf}
+\caption{Real part of the one-loop vacuum polarisation for $e$, $\mu$, $\tau$ loops
+(time-like), and the space-like hadronic fit at $Q^2=s$ as an estimate.}
+\label{fig:vp}
+\end{figure}
+
+\paragraph{From $\Gamma$ to $\Gamma_{\rm Born}$.}
+
+\begin{center}
+\begin{tabular}{lcc}\toprule
+corrections divided out & $\Gamma/\Gamma_{\rm Born}$ & $\mathcal B_{\rm Born}$ (\%)\\\midrule
+$3\alpha/4\pi$ only               & 1.0017 & 5.961\\
+$+$ electron loop ($=1+\delta(E)$, \texttt{delta\_vm}) & 1.0266 & 5.816\\
+$+$ $\mu$, $\tau$ loops           & 1.0332 & 5.779\\
+$+$ hadronic (estimate)           & 1.052  & 5.68\\\bottomrule
+\end{tabular}
+\end{center}
+(computed with $|1-\Pi|^{-2}$; \path{mee_lineshape/vp/vp_table.py}).  Vacuum
+polarisation, not radiation, dominates: 5\,\% against 0.17\,\%.
+
+\paragraph{Consequences for the generator and the fit.}
+None for normalisation: vacuum polarisation is a common factor of every decay and the
+generated decays are weighted with the PDG branching ratio, without $1+\delta$.  The
+only trace is in Eq.~(\ref{eq:F}), where the electron-loop constant appears in both
+numerator and denominator and cancels up to second order: removing it changes
+$F$ by $+0.14\,\%$, i.e.\ $1-F(1~\text{MeV})$ from 0.3945 to 0.3937 and
+$P(\Mee<3.0)$ from 0.1466 to 0.1455.  This is far below anything a fit to data can
+see and is left as it is.
+
 \section{Recommendation for fitting data}
 
 \begin{enumerate}
@@ -268,7 +372,7 @@ Branch \texttt{mee-lineshape} of \texttt{jpsi-rc-2026}, directory \path{mee_line
 \begin{itemize}
 \item \path{dNdMee_v2.cpp} --- the function;
 \item \path{study_lineshape.py} --- all fits, through the compiled library;
-\item \path{make_figures_mee.py}, \path{make_truth_nores.py} and this report.
+\item \path{make_figures_mee.py}, \path{make_truth_nores.py}, \path{vp/vp_table.py} and this report.
 \end{itemize}
 Inputs: 200k Born generator events (exclurad\_py, card \path{born_jpsi.txt}, model
 \path{jpsi.diffrad_vm_pdet}, \texttt{iacc none}) in
