@@ -1,0 +1,28 @@
+Mariana (gemc 5.14): 1847 files, 9235000 events
+ours (gemc 5.13): 400 files, 2000000 events
+  Mariana (gemc 5.14)      eFT  eff(PID, detector) = 0.2793   any GenMatch = 0.4296   N_gen 9235000
+  ours (gemc 5.13)         eFT  eff(PID, detector) = 0.0265   any GenMatch = 0.0703   N_gen 2000000
+  Mariana (gemc 5.14)      em   eff(PID, detector) = 0.6567   any GenMatch = 0.8893   N_gen 9235000
+  ours (gemc 5.13)         em   eff(PID, detector) = 0.6334   any GenMatch = 0.8788   N_gen 2000000
+  Mariana (gemc 5.14)      ep   eff(PID, detector) = 0.6103   any GenMatch = 0.9176   N_gen 9235000
+  ours (gemc 5.13)         ep   eff(PID, detector) = 0.6119   any GenMatch = 0.9122   N_gen 2000000
+  Mariana (gemc 5.14)      p    eff(PID, detector) = 0.6412   any GenMatch = 0.8392   N_gen 9235000
+  ours (gemc 5.13)         p    eff(PID, detector) = 0.6263   any GenMatch = 0.8556   N_gen 2000000
+  Mariana (gemc 5.14)      eFT  theta  2.0- 3.0: eff = 0.1225  N 3883654
+  ours (gemc 5.13)         eFT  theta  2.0- 3.0: eff = 0.0114  N 1447135
+  Mariana (gemc 5.14)      eFT  theta  3.0- 4.0: eff = 0.5584  N 1926209
+  ours (gemc 5.13)         eFT  theta  3.0- 4.0: eff = 0.0758  N 339313
+  Mariana (gemc 5.14)      eFT  theta  4.0- 5.0: eff = 0.6235  N 1138626
+  ours (gemc 5.13)         eFT  theta  4.0- 5.0: eff = 0.0788  N 116976
+  Mariana (gemc 5.14)      em   theta  5.0-15.0: eff = 0.5247  N 2241989
+  ours (gemc 5.13)         em   theta  5.0-15.0: eff = 0.4998  N 579760
+  Mariana (gemc 5.14)      em   theta 15.0-25.0: eff = 0.7349  N 3863706
+  ours (gemc 5.13)         em   theta 15.0-25.0: eff = 0.7287  N 804718
+  Mariana (gemc 5.14)      em   theta 25.0-35.0: eff = 0.7972  N 2357899
+  ours (gemc 5.13)         em   theta 25.0-35.0: eff = 0.7690  N 466868
+  Mariana (gemc 5.14)      ep   theta  5.0-15.0: eff = 0.7092  N 2243982
+  ours (gemc 5.13)         ep   theta  5.0-15.0: eff = 0.7005  N 580456
+  Mariana (gemc 5.14)      ep   theta 15.0-25.0: eff = 0.7652  N 3863946
+  ours (gemc 5.13)         ep   theta 15.0-25.0: eff = 0.7580  N 803978
+  Mariana (gemc 5.14)      ep   theta 25.0-35.0: eff = 0.4617  N 2355294
+  ours (gemc 5.13)         ep   theta 25.0-35.0: eff = 0.4460  N 466050
